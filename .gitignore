@@ -1,0 +1,5 @@
+.env
+/log
+/model
+step.txt
+/__pycache__
