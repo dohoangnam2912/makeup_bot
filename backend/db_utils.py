@@ -15,7 +15,6 @@ LOOKUP_FUNCTION = [
 ]
 
 
-
 logger = logging.getLogger('app.db')
 
 def get_db_connection():
@@ -88,13 +87,14 @@ def insert_document_record(file_name):
     
 
 # TODO: Need improvement because can't insert all the messages into chat
+# Right now we add only 10 chat
 def get_chat_history(session_id):
     logger.info("Getting chat history.")
     try:
         with sqlite3.connect(DB_NAME) as conn:
             conn.row_factory = sqlite3.Row
             cursor = conn.cursor()
-            cursor.execute("SELECT user_query, response FROM application_logs WHERE session_id=? ORDER BY created_at DESC", (session_id,))
+            cursor.execute("SELECT user_query, response FROM application_logs WHERE session_id=? LIMIT 10 ORDER BY created_at DESC", (session_id,))
             messages = []
             for row in cursor.fetchall():
                 messages.extend([

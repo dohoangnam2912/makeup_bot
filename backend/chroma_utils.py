@@ -16,10 +16,22 @@ from entities import EmbeddingModelName
 import os
 import logging
 
+"""
+Loading docs
+Splitting docs
+Add to chroma
+RAG on chroma
+Remove them
+"""
+
+
+
 logger = logging.getLogger('app.chroma_utils')
-load_dotenv("../.env")
+load_dotenv("/home/yosakoi/Work/chatbot/.env")
+
 if "GOOGLE_API_KEY" not in os.environ:
     os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
+
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200,length_function=len)
 embedding_function = GoogleGenerativeAIEmbeddings(model=EmbeddingModelName.TEXT_EMBEDDING_004)
 

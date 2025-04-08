@@ -1,1 +1,21 @@
+# Utils
 pydantic
+
+# Frontend
+streamlit
+
+# Backend
+langchain
+fastapi
+langchain_google_genai
+langchain-chroma>=0.1.2
+langchain-core
+
+# Model
+torch 
+transformers 
+peft 
+deepspeed 
+datasets 
+accelerate
+bitsandbytes

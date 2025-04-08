@@ -3,3 +3,5 @@
 /model
 step.txt
 /__pycache__
+/archive
+/.idea

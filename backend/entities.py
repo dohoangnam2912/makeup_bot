@@ -18,18 +18,18 @@ from datetime import datetime
 from enum import Enum
 
 class GenerationModelName(str, Enum):
-    GPT4_O = "gpt-4o"
-    GPT4_O_MINI = "gpt-4o-mini"
     GEMINI_2_FLASH = "gemini-2.0-flash"
+    LLAMA_3_1_8B = "meta-llama/Llama-3.1-8B-Instruct"
 
 class EmbeddingModelName(str, Enum):
     TEXT_EMBEDDING_004 = "models/text-embedding-004"
+    VIETNAMSE_EMBEDDING = "dangvantuan/vietnamese-embedding"
 
 class QueryInput(BaseModel):
     question: str
     session_id: str = Field(default=None)
     model: GenerationModelName = Field(default=GenerationModelName.GEMINI_2_FLASH)
-    timestampt: datetime = Field(default=datetime.now())
+    timestamp: datetime = Field(default_factory=datetime.now())
 
 class QueryResponse(BaseModel):
     response: str

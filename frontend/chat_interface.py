@@ -17,7 +17,6 @@ def display_chat_interface():
             st.markdown(prompt)
             logger.info(f"Received message content {prompt}")
 
-        
         # TODO This is crap
         with st.spinner("Generating response..."):
             response = get_api_response(prompt, st.session_state.session_id, st.session_state.model)
