@@ -15,7 +15,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_huggingface import HuggingFacePipeline
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
-from entities import GenerationModelName
+from backend.models.entities import GenerationModelName
 from prompt import contextualize_q_system_prompt, qa_system_prompt
 from qdrant_utils import retriever, vectorstore
 from redis_utils import test_redis_connection

@@ -1,8 +1,8 @@
 import uuid
 import logging
-from backend.models.entities import QueryInput, QueryResponse
-from backend.utils.langchain_utils import get_rag_chain
-from backend.utils.mongo_utils import (
+from models.entities import QueryInput, QueryResponse
+from utils.langchain_utils import get_rag_chain
+from utils.mongo_utils import (
     get_chat_history,
     insert_application_logs
 )

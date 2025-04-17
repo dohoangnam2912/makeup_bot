@@ -8,7 +8,7 @@ import uuid
 
 from fastapi import Body, FastAPI, File, HTTPException, UploadFile
 from .routes import chat_routes, doc_routes
-from entities import DeleteFileRequest, Document, QueryInput, QueryResponse
+from backend.models.entities import DeleteFileRequest, Document, QueryInput, QueryResponse
 from langchain_utils import get_rag_chain
 from mongo_utils import (
     get_all_documents,
@@ -33,9 +33,8 @@ logger.addHandler(console_handler)
 
 # Initialize fastapi
 app = FastAPI()
-app.include_router(chat_routes.router, prefix="/api")
-app.include_router(doc_routes.router, prefix="/api")app.include_router(chat_routes.router, prefix="/api")
-
+app.include_router(chat_routes.router, prefix="/routes")
+app.include_router(doc_routes.router, prefix="/routes")
 
 @app.post("/chat", response_model=QueryResponse)
 def chat(query_input: QueryInput):
