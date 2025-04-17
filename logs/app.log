@@ -1,0 +1,46 @@
+2025-04-17 14:15:20,021 - app - INFO - Session ID: string, User Query: string, Model: GenerationModelName.GEMINI_2_FLASH
+2025-04-17 14:15:20,021 - app.db - INFO - Getting chat history.
+2025-04-17 14:15:20,023 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 14:15:20,029 - app.db - INFO - Successfully retrieved 0 conversation turns
+2025-04-17 14:15:20,029 - app - INFO - Chat history: []
+2025-04-17 14:15:20,029 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash
+2025-04-17 14:15:20,029 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-17 14:15:20,033 - app.langchain - INFO - Cached_retriever: tags=['Qdrant', 'RedisEmbeddingsWrapper'] vectorstore=<langchain_qdrant.vectorstores.Qdrant object at 0x75b130d8fd40> search_kwargs={'k': 3}
+2025-04-17 14:15:20,039 - app.langchain - INFO - Successfully created RAG chain with model: gemini-2.0-flash
+2025-04-17 14:16:02,083 - app - INFO - Session ID: string, User Query: string, Model: GenerationModelName.GEMINI_2_FLASH
+2025-04-17 14:16:02,083 - app.db - INFO - Getting chat history.
+2025-04-17 14:16:02,086 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 14:16:02,089 - app.db - INFO - Successfully retrieved 0 conversation turns
+2025-04-17 14:16:02,089 - app - INFO - Chat history: []
+2025-04-17 14:16:02,090 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash
+2025-04-17 14:16:02,090 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-17 14:16:02,091 - app.langchain - INFO - Cached_retriever: tags=['Qdrant', 'GoogleGenerativeAIEmbeddings'] vectorstore=<langchain_qdrant.vectorstores.Qdrant object at 0x7ba761d75400> search_kwargs={'k': 3}
+2025-04-17 14:16:02,095 - app.langchain - INFO - Successfully created RAG chain with model: gemini-2.0-flash
+2025-04-17 14:26:28,859 - app - INFO - Session ID: string, User Query: string, Model: GenerationModelName.GEMINI_2_FLASH
+2025-04-17 14:26:28,859 - app.db - INFO - Getting chat history.
+2025-04-17 14:26:28,861 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 14:26:28,869 - app.db - INFO - Successfully retrieved 0 conversation turns
+2025-04-17 14:26:28,870 - app - INFO - Chat history: []
+2025-04-17 14:26:28,870 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash
+2025-04-17 14:26:28,870 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-17 14:26:28,873 - app.langchain - INFO - Cached_retriever: tags=['Qdrant', 'GoogleGenerativeAIEmbeddings'] vectorstore=<langchain_qdrant.vectorstores.Qdrant object at 0x7f2f82b72840> search_kwargs={'k': 3}
+2025-04-17 14:26:28,879 - app.langchain - INFO - Successfully created RAG chain with model: gemini-2.0-flash
+2025-04-17 14:26:30,867 - app - INFO - Sucessfully invoke rag_chain
+2025-04-17 14:26:30,867 - app.db - INFO - Inserting application logs.
+2025-04-17 14:26:30,868 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 14:26:30,872 - app.db - INFO - Successfully inserted application logs.
+2025-04-17 14:26:30,873 - app - INFO - Session ID: string, AI response: {'input': 'string', 'chat_history': [], 'context': [], 'answer': 'The question is not about any specific topic, so I cannot provide an answer.'}
+2025-04-17 14:29:38,981 - app - INFO - Session ID: string, User Query: string, Model: GenerationModelName.GEMINI_2_FLASH
+2025-04-17 14:29:38,981 - app.db - INFO - Getting chat history.
+2025-04-17 14:29:38,983 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 14:29:38,986 - app.db - INFO - Successfully retrieved 1 conversation turns
+2025-04-17 14:29:38,986 - app - INFO - Chat history: [('human', 'string'), ('ai', 'The question is not about any specific topic, so I cannot provide an answer.')]
+2025-04-17 14:29:38,986 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash
+2025-04-17 14:29:38,986 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-17 14:29:38,988 - app.langchain - INFO - Cached_retriever: tags=['Qdrant', 'GoogleGenerativeAIEmbeddings'] vectorstore=<langchain_qdrant.vectorstores.Qdrant object at 0x7f2f82b72840> search_kwargs={'k': 3}
+2025-04-17 14:29:38,988 - app.langchain - INFO - Successfully created RAG chain with model: gemini-2.0-flash
+2025-04-17 14:29:40,633 - app - INFO - Sucessfully invoke rag_chain
+2025-04-17 14:29:40,633 - app.db - INFO - Inserting application logs.
+2025-04-17 14:29:40,634 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 14:29:40,638 - app.db - INFO - Successfully inserted application logs.
+2025-04-17 14:29:40,639 - app - INFO - Session ID: string, AI response: {'input': 'string', 'chat_history': [('human', 'string'), ('ai', 'The question is not about any specific topic, so I cannot provide an answer.')], 'context': [], 'answer': 'I am unable to answer this question, as it is too vague. Can you please provide me with more context?'}

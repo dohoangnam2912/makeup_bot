@@ -1,15 +1,26 @@
-# Utils
-pydantic
-
-# Frontend
-streamlit
-
-# Backend
-langchain
+# Core dependencies
 fastapi
+uvicorn
+pydantic
+python-dotenv
+
+# Database
+pymongo
+
+# Qdrant
+qdrant-client
+langchain_qdrant
+
+# Redis
+redis
+langchain-redis
+
+# LangChain
+langchain
 langchain_google_genai
-langchain-chroma>=0.1.2
 langchain-core
+langchain-huggingface
+langchain-community
 
 # Model
 torch 
@@ -19,3 +30,11 @@ deepspeed
 datasets 
 accelerate
 bitsandbytes
+sentencepiece
+
+# Utilities
+requests
+tqdm
+
+# Frontend
+streamlit
