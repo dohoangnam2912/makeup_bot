@@ -12,6 +12,3 @@ qa_system_prompt = (
     "If there's no related context, just answer with your base knowledge." 
     "Use three sentences maximum and keep the answer concise."
 )
-
-print(contextualize_q_system_prompt)
-print(qa_system_prompt)
