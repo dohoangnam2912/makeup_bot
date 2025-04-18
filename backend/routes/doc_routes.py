@@ -4,7 +4,7 @@ from controllers.doc_controller import (
     handle_list_documents,
     handle_delete_document
 )
-from models.entities import QueryInput, QueryResponse, Document, DeleteFileRequest
+from models.entities import Document, DeleteFileRequest
 
 router = APIRouter()
 

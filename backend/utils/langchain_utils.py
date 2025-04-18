@@ -15,11 +15,11 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_huggingface import HuggingFacePipeline
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
-from backend.models.entities import GenerationModelName
+from models.entities import GenerationModelName
 from prompt import contextualize_q_system_prompt, qa_system_prompt
-from qdrant_utils import retriever, vectorstore
-from redis_utils import test_redis_connection
-from langchain_redis import get_redis_cached_llm, get_cached_retriever
+from .qdrant_utils import retriever, vectorstore
+from .redis_utils import test_redis_connection
+from .langchain_redis import get_redis_cached_llm, get_cached_retriever
 
 # Configure logging
 logger = logging.getLogger("app.langchain")

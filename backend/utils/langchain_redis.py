@@ -13,7 +13,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.retrievers import BaseRetriever
 
-from redis_utils import redis_cache, redis_client, llm_rate_limiter, embedding_rate_limiter
+from .redis_utils import redis_cache, redis_client, llm_rate_limiter, embedding_rate_limiter
 
 # Configure logging
 logger = logging.getLogger("app.langchain_redis")

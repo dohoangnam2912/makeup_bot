@@ -44,3 +44,59 @@
 2025-04-17 14:29:40,634 - app.db - INFO - Succesfully connected to MongoDB.
 2025-04-17 14:29:40,638 - app.db - INFO - Successfully inserted application logs.
 2025-04-17 14:29:40,639 - app - INFO - Session ID: string, AI response: {'input': 'string', 'chat_history': [('human', 'string'), ('ai', 'The question is not about any specific topic, so I cannot provide an answer.')], 'context': [], 'answer': 'I am unable to answer this question, as it is too vague. Can you please provide me with more context?'}
+2025-04-17 16:39:11,447 - app.chat_controller - INFO - Session ID: string, User Query: string, Model: GenerationModelName.GEMINI_2_FLASH
+2025-04-17 16:39:11,448 - app.db - INFO - Getting chat history.
+2025-04-17 16:39:11,450 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 16:39:11,470 - app.db - INFO - Successfully retrieved 2 conversation turns
+2025-04-17 16:39:11,471 - app.chat_controller - INFO - Chat history: [('human', 'string'), ('ai', 'I am unable to answer this question, as it is too vague. Can you please provide me with more context?'), ('human', 'string'), ('ai', 'The question is not about any specific topic, so I cannot provide an answer.')]
+2025-04-17 16:39:11,471 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash
+2025-04-17 16:39:11,471 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-17 16:39:11,473 - app.langchain - INFO - Cached_retriever: tags=['Qdrant', 'GoogleGenerativeAIEmbeddings'] vectorstore=<langchain_qdrant.vectorstores.Qdrant object at 0x7d5e9f29e570> search_kwargs={'k': 3}
+2025-04-17 16:39:11,476 - app.langchain - INFO - Successfully created RAG chain with model: gemini-2.0-flash
+2025-04-17 16:39:13,629 - app.chat_controller - INFO - Sucessfully invoke rag_chain
+2025-04-17 16:39:13,629 - app.db - INFO - Inserting application logs.
+2025-04-17 16:39:13,630 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 16:39:13,649 - app.db - INFO - Successfully inserted application logs.
+2025-04-17 16:39:13,650 - app.chat_controller - INFO - Session ID: string, AI response: {'input': 'string', 'chat_history': [('human', 'string'), ('ai', 'I am unable to answer this question, as it is too vague. Can you please provide me with more context?'), ('human', 'string'), ('ai', 'The question is not about any specific topic, so I cannot provide an answer.')], 'context': [], 'answer': 'This question is too vague for me to answer. Can you please provide more information?'}
+2025-04-17 16:39:26,433 - app.chat_controller - INFO - Session ID: 123, User Query: Hello, Model: GenerationModelName.GEMINI_2_FLASH
+2025-04-17 16:39:26,433 - app.db - INFO - Getting chat history.
+2025-04-17 16:39:26,434 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 16:39:26,437 - app.db - INFO - Successfully retrieved 0 conversation turns
+2025-04-17 16:39:26,438 - app.chat_controller - INFO - Chat history: []
+2025-04-17 16:39:26,438 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash
+2025-04-17 16:39:26,438 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-17 16:39:26,439 - app.langchain - INFO - Cached_retriever: tags=['Qdrant', 'GoogleGenerativeAIEmbeddings'] vectorstore=<langchain_qdrant.vectorstores.Qdrant object at 0x7d5e9f29e570> search_kwargs={'k': 3}
+2025-04-17 16:39:26,440 - app.langchain - INFO - Successfully created RAG chain with model: gemini-2.0-flash
+2025-04-17 16:39:28,395 - app.chat_controller - INFO - Sucessfully invoke rag_chain
+2025-04-17 16:39:28,395 - app.db - INFO - Inserting application logs.
+2025-04-17 16:39:28,397 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 16:39:28,409 - app.db - INFO - Successfully inserted application logs.
+2025-04-17 16:39:28,410 - app.chat_controller - INFO - Session ID: 123, AI response: {'input': 'Hello', 'chat_history': [], 'context': [], 'answer': 'Hello! How can I assist you today? I am ready to answer your questions or provide information as needed.'}
+2025-04-17 16:39:42,230 - app.chat_controller - INFO - Session ID: 123, User Query: I would love to make some pie today, Model: GenerationModelName.GEMINI_2_FLASH
+2025-04-17 16:39:42,230 - app.db - INFO - Getting chat history.
+2025-04-17 16:39:42,231 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 16:39:42,235 - app.db - INFO - Successfully retrieved 1 conversation turns
+2025-04-17 16:39:42,235 - app.chat_controller - INFO - Chat history: [('human', 'Hello'), ('ai', 'Hello! How can I assist you today? I am ready to answer your questions or provide information as needed.')]
+2025-04-17 16:39:42,235 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash
+2025-04-17 16:39:42,235 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-17 16:39:42,237 - app.langchain - INFO - Cached_retriever: tags=['Qdrant', 'GoogleGenerativeAIEmbeddings'] vectorstore=<langchain_qdrant.vectorstores.Qdrant object at 0x7d5e9f29e570> search_kwargs={'k': 3}
+2025-04-17 16:39:42,237 - app.langchain - INFO - Successfully created RAG chain with model: gemini-2.0-flash
+2025-04-17 16:39:49,657 - app.chat_controller - INFO - Sucessfully invoke rag_chain
+2025-04-17 16:39:49,657 - app.db - INFO - Inserting application logs.
+2025-04-17 16:39:49,659 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 16:39:49,662 - app.db - INFO - Successfully inserted application logs.
+2025-04-17 16:39:49,663 - app.chat_controller - INFO - Session ID: 123, AI response: {'input': 'I would love to make some pie today', 'chat_history': [('human', 'Hello'), ('ai', 'Hello! How can I assist you today? I am ready to answer your questions or provide information as needed.')], 'context': [], 'answer': 'That sounds delicious! What kind of pie are you thinking of making? I can help you find recipes or offer tips if you have a specific pie in mind.'}
+2025-04-17 16:41:12,503 - app.chat_controller - INFO - Session ID: 123, User Query: Sorry, I have gone for awhile, what have we been talking about?, Model: GenerationModelName.GEMINI_2_FLASH
+2025-04-17 16:41:12,503 - app.db - INFO - Getting chat history.
+2025-04-17 16:41:12,504 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 16:41:12,517 - app.db - INFO - Successfully retrieved 2 conversation turns
+2025-04-17 16:41:12,518 - app.chat_controller - INFO - Chat history: [('human', 'I would love to make some pie today'), ('ai', 'That sounds delicious! What kind of pie are you thinking of making? I can help you find recipes or offer tips if you have a specific pie in mind.'), ('human', 'Hello'), ('ai', 'Hello! How can I assist you today? I am ready to answer your questions or provide information as needed.')]
+2025-04-17 16:41:12,518 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash
+2025-04-17 16:41:12,518 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-17 16:41:12,519 - app.langchain - INFO - Cached_retriever: tags=['Qdrant', 'GoogleGenerativeAIEmbeddings'] vectorstore=<langchain_qdrant.vectorstores.Qdrant object at 0x7d5e9f29e570> search_kwargs={'k': 3}
+2025-04-17 16:41:12,519 - app.langchain - INFO - Successfully created RAG chain with model: gemini-2.0-flash
+2025-04-17 16:41:14,361 - app.chat_controller - INFO - Sucessfully invoke rag_chain
+2025-04-17 16:41:14,361 - app.db - INFO - Inserting application logs.
+2025-04-17 16:41:14,363 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-17 16:41:14,366 - app.db - INFO - Successfully inserted application logs.
+2025-04-17 16:41:14,367 - app.chat_controller - INFO - Session ID: 123, AI response: {'input': 'Sorry, I have gone for awhile, what have we been talking about?', 'chat_history': [('human', 'I would love to make some pie today'), ('ai', 'That sounds delicious! What kind of pie are you thinking of making? I can help you find recipes or offer tips if you have a specific pie in mind.'), ('human', 'Hello'), ('ai', 'Hello! How can I assist you today? I am ready to answer your questions or provide information as needed.')], 'context': [], 'answer': 'We were just talking about making pie. I offered to help you find recipes or offer tips.'}

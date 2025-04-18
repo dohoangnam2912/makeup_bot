@@ -19,9 +19,9 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, Filter, PointIdsList
 
-from entities import EmbeddingModelName
-from redis_utils import test_redis_connection
-from langchain_redis import get_redis_cached_embeddings
+from models.entities import EmbeddingModelName
+from .redis_utils import test_redis_connection
+from .langchain_redis import get_redis_cached_embeddings
 
 # Configure logging
 logger = logging.getLogger("app.qdrant_utils")
