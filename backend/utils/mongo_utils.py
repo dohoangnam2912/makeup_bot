@@ -17,7 +17,7 @@ logger = logging.getLogger('app.db')
 # Define collection names
 LOGS_COLLECTION = "application_logs"
 DOCS_COLLECTION = "document_store"
-
+SESSIONS_COLLECTION = "chat_sessions"
 
 def get_db_connection():
     """

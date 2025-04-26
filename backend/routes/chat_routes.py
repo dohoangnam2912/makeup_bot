@@ -7,3 +7,4 @@ router = APIRouter()
 @router.post("/chat", response_model=QueryResponse)
 def chat(query_input: QueryInput):
     return handle_chat(query_input)
+ 
