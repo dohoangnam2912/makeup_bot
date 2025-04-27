@@ -1,3 +1,16 @@
+# Prompt viết lại 
+rewriting_prompt = """
+Bạn là một chuyên gia phân tích ngôn ngữ và diễn giải ý định người dùng. Nhiệm vụ của bạn là nhận một câu đầu vào có thể chứa lỗi do thu âm không rõ ràng hoặc phát âm sai, và chuyển đổi nó thành một câu prompt rõ ràng và chính xác nhất có thể, phản ánh đúng ý định mà người dùng muốn truyền đạt.
+
+Hãy xem xét kỹ lưỡng ngữ cảnh có thể có, các cụm từ tương tự phổ biến, và kiến thức ngôn ngữ tổng quát để đưa ra một prompt đã được "chuẩn hóa".
+
+Ví dụ:
+- Đầu vào: "Hôm bún tôi không hiểu"
+- Đầu ra (Prompt được chuẩn hóa): "Hôm đó tôi không hiểu."
+
+Bây giờ, hãy áp dụng quy trình này cho câu đầu vào tiếp theo mà người dùng cung cấp. Bạn sẽ chỉ đưa ra câu prompt đã được chuẩn hóa làm đầu ra cuối cùng.
+"""
+
 # Prompt cho hệ thống hỏi đáp
 contextualize_q_system_prompt = (
     "Based on the chat history and the user's latest question, perform the following two tasks: "

@@ -39,10 +39,10 @@ export default function ChatInterface() {
   }, [initialMessage]);
 
   const handleChatAppend = async (text) => {
-    const userMsg = { from: 'user', text };
-    setMessages((prev) => [...prev, userMsg]);
+    // const userMsg = { from: 'user', text };
+    // setMessages((prev) => [...prev, userMsg]); // Đảm bảo không lặp lại
     setIsLoading(true);
-
+  
     try {
       const res = await fetch('http://localhost:8000/routes/chat', {
         method: 'POST',
@@ -54,29 +54,34 @@ export default function ChatInterface() {
           timestamp: new Date().toISOString(),
         }),
       });
-
+  
       const data = await res.json();
       const botText = data.response;
+      const rewrittenPrompt = data.rewritten_question;  // Câu hỏi đã viết lại từ LLM
+      // Thêm câu hỏi đã viết lại (rewritten_question) vào messages
+      setMessages((prev) => [...prev, { from: 'user', text: rewrittenPrompt }]);
+      // Chỉ thêm tin nhắn của bot vào messages, không thêm tin nhắn người dùng lần nữa
       setMessages((prev) => [...prev, { from: 'bot', text: botText }]);
-
+  
+      // Xử lý TTS nếu cần
       try {
         const formData = new FormData();
         formData.append("text", botText);
-
+  
         const res = await fetch("http://localhost:8000/routes/speak", {
           method: "POST",
           body: formData,
         });
-
+  
         const audioBlob = await res.blob();
         const audioURL = URL.createObjectURL(audioBlob);
         new Audio(audioURL).play();
       } catch (err) {
-        console.error("❌ Lỗi TTS:", err);
+        console.error("Lỗi TTS:", err);
       }
     } catch (err) {
-      console.error('❌ Lỗi khi gửi tới chat backend:', err);
-      setMessages((prev) => [...prev, { from: 'bot', text: '⚠️ Bot không phản hồi.' }]);
+      console.error('Lỗi khi gửi tới chat backend:', err);
+      setMessages((prev) => [...prev, { from: 'bot', text: 'Bot không phản hồi.' }]);
     } finally {
       setIsLoading(false);
     }

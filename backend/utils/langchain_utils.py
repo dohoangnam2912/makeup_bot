@@ -20,6 +20,7 @@ from .redis_utils import test_redis_connection
 from .langchain_redis import get_redis_cached_llm, get_cached_retriever
 from .intent_detector import IntentDetector
 from prompt import (
+    rewriting_prompt,
     contextualize_q_system_prompt,
     qa_system_prompt,
     greeting_system_prompt,
@@ -139,6 +140,29 @@ def get_llm(model: str):
 
     return base_llm
 
+def rewrite_prompt_with_llm(model: str, user_input: str) -> str:
+    """
+    Rewrite the user's input prompt using LLM (Language Model) for clarity or correction.
+    
+    Args:
+        user_input: The original query/question from the user.
+        model: The model being used to rewrite the prompt.
+        
+    Returns:
+        str: The rewritten prompt.
+    """
+    # Create the LLM chain for rewriting
+    logger.info(f"Using {model} to rewrite prompt")
+    llm = get_llm(model)
+    prompt_for_rewriting = f"System: {rewriting_prompt}. User: {user_input}"
+    logger.info(f'Prompt for rewritin: {prompt_for_rewriting}')
+    # Use the LLM to generate the rewritten question
+    rewritten_prompt = llm.invoke(prompt_for_rewriting)
+    
+    logger.info(f"Rewritten prompt: {rewritten_prompt}")
+    
+    return rewritten_prompt.content
+
 def get_rag_chain(model: str = GenerationModelName.GEMINI_2_FLASH, user_input: Optional[str] = None):
     """
     Create RAG chain depending on detected intent.
@@ -180,7 +204,7 @@ def get_rag_chain(model: str = GenerationModelName.GEMINI_2_FLASH, user_input: O
         )
 
     logger.info(f"Successfully created chain with model: {model}")
-    return rag_chain,
+    return rag_chain
 
 def get_standalone_rag_chain(model: str = GenerationModelName.GEMINI_2_FLASH, k: int = 3, user_input: Optional[str] = None):
     """

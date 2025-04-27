@@ -4285,3 +4285,939 @@
 2025-04-27 13:20:09,336 - app.db - INFO - Succesfully connected to MongoDB.
 2025-04-27 13:20:09,340 - app.db - INFO - Successfully inserted application logs.
 2025-04-27 13:20:09,342 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: {'input': 'yêu cầu việt.', 'chat_history': [('human', 'đúng.'), ('ai', 'Tôi rất vui được giúp bạn về trang điểm hoặc chăm sóc da! Để tôi có thể cung cấp cho bạn câu trả lời tốt nhất, bạn có thể cho tôi biết bạn muốn biết điều gì cụ thể không? Ví dụ:\n\n*   Bạn có câu hỏi về một sản phẩm cụ thể không?\n*   Bạn muốn được tư vấn về một quy trình trang điểm hoặc chăm sóc da?\n*   Bạn có loại da cụ thể nào và muốn tìm sản phẩm phù hợp?\n\nCàng nhiều thông tin bạn cung cấp, tôi càng có thể giúp bạn tốt hơn!'), ('human', 'yêu cầu việt.'), ('ai', 'Chào bạn! Để tôi có thể giúp bạn tốt nhất về trang điểm hoặc chăm sóc da, bạn có thể cho tôi biết cụ thể hơn câu hỏi hoặc chủ đề bạn quan tâm được không? Ví dụ:\n\n*   Bạn muốn biết về sản phẩm cụ thể nào không?\n*   Bạn có vấn đề về da cần tư vấn không?\n*   Bạn muốn học cách trang điểm cho dịp gì?\n\nCàng nhiều chi tiết, tôi càng có thể đưa ra những lời khuyên hữu ích cho bạn!'), ('human', 'được thi thể.'), ('ai', "I'm sorry, I'm not sure I understand. Could you please clarify what you're asking about? Are you interested in makeup or skincare techniques related to a particular situation or purpose? The more information you can give me, the better I can assist you!")], 'text': 'Chào bạn! Mình rất vui được giúp bạn về các vấn đề liên quan đến trang điểm và chăm sóc da. Để mình có thể hỗ trợ bạn tốt nhất, bạn có thể cho mình biết cụ thể hơn câu hỏi của bạn là gì được không? Ví dụ như:\n\n*   Bạn muốn hỏi về sản phẩm trang điểm nào? (ví dụ: kem nền, son môi, phấn mắt...)\n*   Bạn muốn biết về quy trình chăm sóc da nào? (ví dụ: làm sạch, dưỡng ẩm, chống nắng...)\n*   Bạn có vấn đề cụ thể về da cần được tư vấn không? (ví dụ: mụn, da khô, da dầu...)\n\nMình sẽ cố gắng trả lời bạn một cách chi tiết và hữu ích nhất có thể. Cảm ơn bạn!'}
+2025-04-27 13:50:54,424 - app.audio_controller - INFO - Speech: ừ chị trung.
+2025-04-27 13:50:54,453 - app.chat_controller - INFO - User Query: ừ chị trung.
+2025-04-27 13:50:54,453 - app.langchain - INFO - Loading Hugging Face model: ./models/finetuned-model
+2025-04-27 13:50:54,453 - app.chat_controller - ERROR - Error while rewriting prompt: Unrecognized model in ./models/finetuned-model. Should have a `model_type` key in its config.json, or contain one of the following strings in its name: albert, align, altclip, aria, aria_text, audio-spectrogram-transformer, autoformer, bamba, bark, bart, beit, bert, bert-generation, big_bird, bigbird_pegasus, biogpt, bit, blenderbot, blenderbot-small, blip, blip-2, bloom, bridgetower, bros, camembert, canine, chameleon, chinese_clip, chinese_clip_vision_model, clap, clip, clip_text_model, clip_vision_model, clipseg, clvp, code_llama, codegen, cohere, cohere2, colpali, conditional_detr, convbert, convnext, convnextv2, cpmant, ctrl, cvt, dab-detr, dac, data2vec-audio, data2vec-text, data2vec-vision, dbrx, deberta, deberta-v2, decision_transformer, deformable_detr, deit, depth_anything, depth_pro, deta, detr, diffllama, dinat, dinov2, dinov2_with_registers, distilbert, donut-swin, dpr, dpt, efficientformer, efficientnet, electra, emu3, encodec, encoder-decoder, ernie, ernie_m, esm, falcon, falcon_mamba, fastspeech2_conformer, flaubert, flava, fnet, focalnet, fsmt, funnel, fuyu, gemma, gemma2, git, glm, glpn, got_ocr2, gpt-sw3, gpt2, gpt_bigcode, gpt_neo, gpt_neox, gpt_neox_japanese, gptj, gptsan-japanese, granite, granitemoe, granitemoeshared, granitevision, graphormer, grounding-dino, groupvit, helium, hiera, hubert, ibert, idefics, idefics2, idefics3, idefics3_vision, ijepa, imagegpt, informer, instructblip, instructblipvideo, jamba, jetmoe, jukebox, kosmos-2, layoutlm, layoutlmv2, layoutlmv3, led, levit, lilt, llama, llava, llava_next, llava_next_video, llava_onevision, longformer, longt5, luke, lxmert, m2m_100, mamba, mamba2, marian, markuplm, mask2former, maskformer, maskformer-swin, mbart, mctct, mega, megatron-bert, mgp-str, mimi, mistral, mixtral, mllama, mobilebert, mobilenet_v1, mobilenet_v2, mobilevit, mobilevitv2, modernbert, moonshine, moshi, mpnet, mpt, mra, mt5, musicgen, musicgen_melody, mvp, nat, nemotron, nezha, nllb-moe, nougat, nystromformer, olmo, olmo2, olmoe, omdet-turbo, oneformer, open-llama, openai-gpt, opt, owlv2, owlvit, paligemma, patchtsmixer, patchtst, pegasus, pegasus_x, perceiver, persimmon, phi, phi3, phimoe, pix2struct, pixtral, plbart, poolformer, pop2piano, prophetnet, pvt, pvt_v2, qdqbert, qwen2, qwen2_5_vl, qwen2_audio, qwen2_audio_encoder, qwen2_moe, qwen2_vl, rag, realm, recurrent_gemma, reformer, regnet, rembert, resnet, retribert, roberta, roberta-prelayernorm, roc_bert, roformer, rt_detr, rt_detr_resnet, rt_detr_v2, rwkv, sam, seamless_m4t, seamless_m4t_v2, segformer, seggpt, sew, sew-d, siglip, siglip_vision_model, speech-encoder-decoder, speech_to_text, speech_to_text_2, speecht5, splinter, squeezebert, stablelm, starcoder2, superglue, superpoint, swiftformer, swin, swin2sr, swinv2, switch_transformers, t5, table-transformer, tapas, textnet, time_series_transformer, timesformer, timm_backbone, timm_wrapper, trajectory_transformer, transfo-xl, trocr, tvlt, tvp, udop, umt5, unispeech, unispeech-sat, univnet, upernet, van, video_llava, videomae, vilt, vipllava, vision-encoder-decoder, vision-text-dual-encoder, visual_bert, vit, vit_hybrid, vit_mae, vit_msn, vitdet, vitmatte, vitpose, vitpose_backbone, vits, vivit, wav2vec2, wav2vec2-bert, wav2vec2-conformer, wavlm, whisper, xclip, xglm, xlm, xlm-prophetnet, xlm-roberta, xlm-roberta-xl, xlnet, xmod, yolos, yoso, zamba, zamba2, zoedepth
+2025-04-27 13:50:54,453 - app.chat_controller - INFO - Fallback to original prompt: ừ chị trung.
+2025-04-27 13:50:54,453 - app.db - INFO - Getting chat history.
+2025-04-27 13:50:54,457 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:50:54,464 - app.db - INFO - Successfully retrieved 5 conversation turns
+2025-04-27 13:50:54,464 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: ừ chị trung.
+2025-04-27 13:50:54,464 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 13:50:54,548 - app.intent_detector - INFO - Detected intent: phản hồi for input: ừ chị trung.
+2025-04-27 13:50:54,548 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 13:50:54,549 - app.langchain - INFO - Detected intent: phản hồi | Requires context: False
+2025-04-27 13:50:54,549 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 13:51:09,527 - app.audio_controller - INFO - Speech: đàn.
+2025-04-27 13:51:09,534 - app.chat_controller - INFO - User Query: đàn.
+2025-04-27 13:51:09,535 - app.langchain - INFO - Loading Hugging Face model: ./models/finetuned-model
+2025-04-27 13:51:09,535 - app.chat_controller - ERROR - Error while rewriting prompt: Unrecognized model in ./models/finetuned-model. Should have a `model_type` key in its config.json, or contain one of the following strings in its name: albert, align, altclip, aria, aria_text, audio-spectrogram-transformer, autoformer, bamba, bark, bart, beit, bert, bert-generation, big_bird, bigbird_pegasus, biogpt, bit, blenderbot, blenderbot-small, blip, blip-2, bloom, bridgetower, bros, camembert, canine, chameleon, chinese_clip, chinese_clip_vision_model, clap, clip, clip_text_model, clip_vision_model, clipseg, clvp, code_llama, codegen, cohere, cohere2, colpali, conditional_detr, convbert, convnext, convnextv2, cpmant, ctrl, cvt, dab-detr, dac, data2vec-audio, data2vec-text, data2vec-vision, dbrx, deberta, deberta-v2, decision_transformer, deformable_detr, deit, depth_anything, depth_pro, deta, detr, diffllama, dinat, dinov2, dinov2_with_registers, distilbert, donut-swin, dpr, dpt, efficientformer, efficientnet, electra, emu3, encodec, encoder-decoder, ernie, ernie_m, esm, falcon, falcon_mamba, fastspeech2_conformer, flaubert, flava, fnet, focalnet, fsmt, funnel, fuyu, gemma, gemma2, git, glm, glpn, got_ocr2, gpt-sw3, gpt2, gpt_bigcode, gpt_neo, gpt_neox, gpt_neox_japanese, gptj, gptsan-japanese, granite, granitemoe, granitemoeshared, granitevision, graphormer, grounding-dino, groupvit, helium, hiera, hubert, ibert, idefics, idefics2, idefics3, idefics3_vision, ijepa, imagegpt, informer, instructblip, instructblipvideo, jamba, jetmoe, jukebox, kosmos-2, layoutlm, layoutlmv2, layoutlmv3, led, levit, lilt, llama, llava, llava_next, llava_next_video, llava_onevision, longformer, longt5, luke, lxmert, m2m_100, mamba, mamba2, marian, markuplm, mask2former, maskformer, maskformer-swin, mbart, mctct, mega, megatron-bert, mgp-str, mimi, mistral, mixtral, mllama, mobilebert, mobilenet_v1, mobilenet_v2, mobilevit, mobilevitv2, modernbert, moonshine, moshi, mpnet, mpt, mra, mt5, musicgen, musicgen_melody, mvp, nat, nemotron, nezha, nllb-moe, nougat, nystromformer, olmo, olmo2, olmoe, omdet-turbo, oneformer, open-llama, openai-gpt, opt, owlv2, owlvit, paligemma, patchtsmixer, patchtst, pegasus, pegasus_x, perceiver, persimmon, phi, phi3, phimoe, pix2struct, pixtral, plbart, poolformer, pop2piano, prophetnet, pvt, pvt_v2, qdqbert, qwen2, qwen2_5_vl, qwen2_audio, qwen2_audio_encoder, qwen2_moe, qwen2_vl, rag, realm, recurrent_gemma, reformer, regnet, rembert, resnet, retribert, roberta, roberta-prelayernorm, roc_bert, roformer, rt_detr, rt_detr_resnet, rt_detr_v2, rwkv, sam, seamless_m4t, seamless_m4t_v2, segformer, seggpt, sew, sew-d, siglip, siglip_vision_model, speech-encoder-decoder, speech_to_text, speech_to_text_2, speecht5, splinter, squeezebert, stablelm, starcoder2, superglue, superpoint, swiftformer, swin, swin2sr, swinv2, switch_transformers, t5, table-transformer, tapas, textnet, time_series_transformer, timesformer, timm_backbone, timm_wrapper, trajectory_transformer, transfo-xl, trocr, tvlt, tvp, udop, umt5, unispeech, unispeech-sat, univnet, upernet, van, video_llava, videomae, vilt, vipllava, vision-encoder-decoder, vision-text-dual-encoder, visual_bert, vit, vit_hybrid, vit_mae, vit_msn, vitdet, vitmatte, vitpose, vitpose_backbone, vits, vivit, wav2vec2, wav2vec2-bert, wav2vec2-conformer, wavlm, whisper, xclip, xglm, xlm, xlm-prophetnet, xlm-roberta, xlm-roberta-xl, xlnet, xmod, yolos, yoso, zamba, zamba2, zoedepth
+2025-04-27 13:51:09,535 - app.chat_controller - INFO - Fallback to original prompt: đàn.
+2025-04-27 13:51:09,535 - app.db - INFO - Getting chat history.
+2025-04-27 13:51:09,536 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:51:09,541 - app.db - INFO - Successfully retrieved 5 conversation turns
+2025-04-27 13:51:09,541 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: đàn.
+2025-04-27 13:51:09,541 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 13:51:09,593 - app.intent_detector - INFO - Detected intent: nói chuyện phiếm for input: đàn.
+2025-04-27 13:51:09,593 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 13:51:09,593 - app.langchain - INFO - Detected intent: nói chuyện phiếm | Requires context: False
+2025-04-27 13:51:09,593 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 13:52:01,330 - app.chat_controller - INFO - User Query: thế thì dạo.
+2025-04-27 13:52:01,330 - app.langchain - INFO - Loading Hugging Face model: ./models/finetuned-model
+2025-04-27 13:52:01,331 - app.chat_controller - ERROR - Error while rewriting prompt: Unrecognized model in ./models/finetuned-model. Should have a `model_type` key in its config.json, or contain one of the following strings in its name: albert, align, altclip, aria, aria_text, audio-spectrogram-transformer, autoformer, bamba, bark, bart, beit, bert, bert-generation, big_bird, bigbird_pegasus, biogpt, bit, blenderbot, blenderbot-small, blip, blip-2, bloom, bridgetower, bros, camembert, canine, chameleon, chinese_clip, chinese_clip_vision_model, clap, clip, clip_text_model, clip_vision_model, clipseg, clvp, code_llama, codegen, cohere, cohere2, colpali, conditional_detr, convbert, convnext, convnextv2, cpmant, ctrl, cvt, dab-detr, dac, data2vec-audio, data2vec-text, data2vec-vision, dbrx, deberta, deberta-v2, decision_transformer, deformable_detr, deit, depth_anything, depth_pro, deta, detr, diffllama, dinat, dinov2, dinov2_with_registers, distilbert, donut-swin, dpr, dpt, efficientformer, efficientnet, electra, emu3, encodec, encoder-decoder, ernie, ernie_m, esm, falcon, falcon_mamba, fastspeech2_conformer, flaubert, flava, fnet, focalnet, fsmt, funnel, fuyu, gemma, gemma2, git, glm, glpn, got_ocr2, gpt-sw3, gpt2, gpt_bigcode, gpt_neo, gpt_neox, gpt_neox_japanese, gptj, gptsan-japanese, granite, granitemoe, granitemoeshared, granitevision, graphormer, grounding-dino, groupvit, helium, hiera, hubert, ibert, idefics, idefics2, idefics3, idefics3_vision, ijepa, imagegpt, informer, instructblip, instructblipvideo, jamba, jetmoe, jukebox, kosmos-2, layoutlm, layoutlmv2, layoutlmv3, led, levit, lilt, llama, llava, llava_next, llava_next_video, llava_onevision, longformer, longt5, luke, lxmert, m2m_100, mamba, mamba2, marian, markuplm, mask2former, maskformer, maskformer-swin, mbart, mctct, mega, megatron-bert, mgp-str, mimi, mistral, mixtral, mllama, mobilebert, mobilenet_v1, mobilenet_v2, mobilevit, mobilevitv2, modernbert, moonshine, moshi, mpnet, mpt, mra, mt5, musicgen, musicgen_melody, mvp, nat, nemotron, nezha, nllb-moe, nougat, nystromformer, olmo, olmo2, olmoe, omdet-turbo, oneformer, open-llama, openai-gpt, opt, owlv2, owlvit, paligemma, patchtsmixer, patchtst, pegasus, pegasus_x, perceiver, persimmon, phi, phi3, phimoe, pix2struct, pixtral, plbart, poolformer, pop2piano, prophetnet, pvt, pvt_v2, qdqbert, qwen2, qwen2_5_vl, qwen2_audio, qwen2_audio_encoder, qwen2_moe, qwen2_vl, rag, realm, recurrent_gemma, reformer, regnet, rembert, resnet, retribert, roberta, roberta-prelayernorm, roc_bert, roformer, rt_detr, rt_detr_resnet, rt_detr_v2, rwkv, sam, seamless_m4t, seamless_m4t_v2, segformer, seggpt, sew, sew-d, siglip, siglip_vision_model, speech-encoder-decoder, speech_to_text, speech_to_text_2, speecht5, splinter, squeezebert, stablelm, starcoder2, superglue, superpoint, swiftformer, swin, swin2sr, swinv2, switch_transformers, t5, table-transformer, tapas, textnet, time_series_transformer, timesformer, timm_backbone, timm_wrapper, trajectory_transformer, transfo-xl, trocr, tvlt, tvp, udop, umt5, unispeech, unispeech-sat, univnet, upernet, van, video_llava, videomae, vilt, vipllava, vision-encoder-decoder, vision-text-dual-encoder, visual_bert, vit, vit_hybrid, vit_mae, vit_msn, vitdet, vitmatte, vitpose, vitpose_backbone, vits, vivit, wav2vec2, wav2vec2-bert, wav2vec2-conformer, wavlm, whisper, xclip, xglm, xlm, xlm-prophetnet, xlm-roberta, xlm-roberta-xl, xlnet, xmod, yolos, yoso, zamba, zamba2, zoedepth
+2025-04-27 13:52:01,331 - app.chat_controller - INFO - Fallback to original prompt: thế thì dạo.
+2025-04-27 13:52:01,331 - app.db - INFO - Getting chat history.
+2025-04-27 13:52:01,333 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:52:01,340 - app.db - INFO - Successfully retrieved 5 conversation turns
+2025-04-27 13:52:01,341 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: thế thì dạo.
+2025-04-27 13:52:01,341 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 13:52:01,453 - app.intent_detector - INFO - Detected intent: nói chuyện phiếm for input: thế thì dạo.
+2025-04-27 13:52:01,453 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 13:52:01,453 - app.langchain - INFO - Detected intent: nói chuyện phiếm | Requires context: False
+2025-04-27 13:52:01,453 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 13:52:02,343 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 13:52:02,343 - app.db - INFO - Inserting application logs.
+2025-04-27 13:52:02,344 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:52:02,348 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 13:52:02,349 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Tôi có thể giúp bạn với điều đó. Bạn có thể cho tôi biết bạn đang hỏi về điều gì không? Bạn có muốn tìm hiểu về trang điểm, chăm sóc da hay điều gì khác không?
+2025-04-27 13:52:06,898 - app.audio_controller - INFO - Speech: hình thức.
+2025-04-27 13:52:06,905 - app.chat_controller - INFO - User Query: hình thức.
+2025-04-27 13:52:06,905 - app.langchain - INFO - Loading Hugging Face model: ./models/finetuned-model
+2025-04-27 13:52:06,905 - app.chat_controller - ERROR - Error while rewriting prompt: Unrecognized model in ./models/finetuned-model. Should have a `model_type` key in its config.json, or contain one of the following strings in its name: albert, align, altclip, aria, aria_text, audio-spectrogram-transformer, autoformer, bamba, bark, bart, beit, bert, bert-generation, big_bird, bigbird_pegasus, biogpt, bit, blenderbot, blenderbot-small, blip, blip-2, bloom, bridgetower, bros, camembert, canine, chameleon, chinese_clip, chinese_clip_vision_model, clap, clip, clip_text_model, clip_vision_model, clipseg, clvp, code_llama, codegen, cohere, cohere2, colpali, conditional_detr, convbert, convnext, convnextv2, cpmant, ctrl, cvt, dab-detr, dac, data2vec-audio, data2vec-text, data2vec-vision, dbrx, deberta, deberta-v2, decision_transformer, deformable_detr, deit, depth_anything, depth_pro, deta, detr, diffllama, dinat, dinov2, dinov2_with_registers, distilbert, donut-swin, dpr, dpt, efficientformer, efficientnet, electra, emu3, encodec, encoder-decoder, ernie, ernie_m, esm, falcon, falcon_mamba, fastspeech2_conformer, flaubert, flava, fnet, focalnet, fsmt, funnel, fuyu, gemma, gemma2, git, glm, glpn, got_ocr2, gpt-sw3, gpt2, gpt_bigcode, gpt_neo, gpt_neox, gpt_neox_japanese, gptj, gptsan-japanese, granite, granitemoe, granitemoeshared, granitevision, graphormer, grounding-dino, groupvit, helium, hiera, hubert, ibert, idefics, idefics2, idefics3, idefics3_vision, ijepa, imagegpt, informer, instructblip, instructblipvideo, jamba, jetmoe, jukebox, kosmos-2, layoutlm, layoutlmv2, layoutlmv3, led, levit, lilt, llama, llava, llava_next, llava_next_video, llava_onevision, longformer, longt5, luke, lxmert, m2m_100, mamba, mamba2, marian, markuplm, mask2former, maskformer, maskformer-swin, mbart, mctct, mega, megatron-bert, mgp-str, mimi, mistral, mixtral, mllama, mobilebert, mobilenet_v1, mobilenet_v2, mobilevit, mobilevitv2, modernbert, moonshine, moshi, mpnet, mpt, mra, mt5, musicgen, musicgen_melody, mvp, nat, nemotron, nezha, nllb-moe, nougat, nystromformer, olmo, olmo2, olmoe, omdet-turbo, oneformer, open-llama, openai-gpt, opt, owlv2, owlvit, paligemma, patchtsmixer, patchtst, pegasus, pegasus_x, perceiver, persimmon, phi, phi3, phimoe, pix2struct, pixtral, plbart, poolformer, pop2piano, prophetnet, pvt, pvt_v2, qdqbert, qwen2, qwen2_5_vl, qwen2_audio, qwen2_audio_encoder, qwen2_moe, qwen2_vl, rag, realm, recurrent_gemma, reformer, regnet, rembert, resnet, retribert, roberta, roberta-prelayernorm, roc_bert, roformer, rt_detr, rt_detr_resnet, rt_detr_v2, rwkv, sam, seamless_m4t, seamless_m4t_v2, segformer, seggpt, sew, sew-d, siglip, siglip_vision_model, speech-encoder-decoder, speech_to_text, speech_to_text_2, speecht5, splinter, squeezebert, stablelm, starcoder2, superglue, superpoint, swiftformer, swin, swin2sr, swinv2, switch_transformers, t5, table-transformer, tapas, textnet, time_series_transformer, timesformer, timm_backbone, timm_wrapper, trajectory_transformer, transfo-xl, trocr, tvlt, tvp, udop, umt5, unispeech, unispeech-sat, univnet, upernet, van, video_llava, videomae, vilt, vipllava, vision-encoder-decoder, vision-text-dual-encoder, visual_bert, vit, vit_hybrid, vit_mae, vit_msn, vitdet, vitmatte, vitpose, vitpose_backbone, vits, vivit, wav2vec2, wav2vec2-bert, wav2vec2-conformer, wavlm, whisper, xclip, xglm, xlm, xlm-prophetnet, xlm-roberta, xlm-roberta-xl, xlnet, xmod, yolos, yoso, zamba, zamba2, zoedepth
+2025-04-27 13:52:06,905 - app.chat_controller - INFO - Fallback to original prompt: hình thức.
+2025-04-27 13:52:06,905 - app.db - INFO - Getting chat history.
+2025-04-27 13:52:06,906 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:52:06,912 - app.db - INFO - Successfully retrieved 6 conversation turns
+2025-04-27 13:52:06,912 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: hình thức.
+2025-04-27 13:52:06,912 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 13:52:06,980 - app.intent_detector - INFO - Detected intent: nói chuyện phiếm for input: hình thức.
+2025-04-27 13:52:06,980 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 13:52:06,980 - app.langchain - INFO - Detected intent: nói chuyện phiếm | Requires context: False
+2025-04-27 13:52:06,980 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 13:52:08,797 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 13:52:08,797 - app.db - INFO - Inserting application logs.
+2025-04-27 13:52:08,799 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:52:08,802 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 13:52:08,804 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Tôi có thể giúp bạn với điều đó! Để đảm bảo tôi cung cấp thông tin hữu ích nhất, bạn có thể cho tôi biết thêm một chút về những gì bạn muốn tìm hiểu về hình thức không? Bạn có quan tâm đến trang điểm, chăm sóc da hay điều gì khác không?
+2025-04-27 13:54:48,565 - app.audio_controller - INFO - Speech: các em nhá.
+2025-04-27 13:54:48,580 - app.chat_controller - INFO - User Query: các em nhá.
+2025-04-27 13:54:48,580 - app.langchain - INFO - Loading Hugging Face model: ./models/finetuned-model
+2025-04-27 13:54:48,580 - app.chat_controller - ERROR - Error while rewriting prompt: Unrecognized model in ./models/finetuned-model. Should have a `model_type` key in its config.json, or contain one of the following strings in its name: albert, align, altclip, aria, aria_text, audio-spectrogram-transformer, autoformer, bamba, bark, bart, beit, bert, bert-generation, big_bird, bigbird_pegasus, biogpt, bit, blenderbot, blenderbot-small, blip, blip-2, bloom, bridgetower, bros, camembert, canine, chameleon, chinese_clip, chinese_clip_vision_model, clap, clip, clip_text_model, clip_vision_model, clipseg, clvp, code_llama, codegen, cohere, cohere2, colpali, conditional_detr, convbert, convnext, convnextv2, cpmant, ctrl, cvt, dab-detr, dac, data2vec-audio, data2vec-text, data2vec-vision, dbrx, deberta, deberta-v2, decision_transformer, deformable_detr, deit, depth_anything, depth_pro, deta, detr, diffllama, dinat, dinov2, dinov2_with_registers, distilbert, donut-swin, dpr, dpt, efficientformer, efficientnet, electra, emu3, encodec, encoder-decoder, ernie, ernie_m, esm, falcon, falcon_mamba, fastspeech2_conformer, flaubert, flava, fnet, focalnet, fsmt, funnel, fuyu, gemma, gemma2, git, glm, glpn, got_ocr2, gpt-sw3, gpt2, gpt_bigcode, gpt_neo, gpt_neox, gpt_neox_japanese, gptj, gptsan-japanese, granite, granitemoe, granitemoeshared, granitevision, graphormer, grounding-dino, groupvit, helium, hiera, hubert, ibert, idefics, idefics2, idefics3, idefics3_vision, ijepa, imagegpt, informer, instructblip, instructblipvideo, jamba, jetmoe, jukebox, kosmos-2, layoutlm, layoutlmv2, layoutlmv3, led, levit, lilt, llama, llava, llava_next, llava_next_video, llava_onevision, longformer, longt5, luke, lxmert, m2m_100, mamba, mamba2, marian, markuplm, mask2former, maskformer, maskformer-swin, mbart, mctct, mega, megatron-bert, mgp-str, mimi, mistral, mixtral, mllama, mobilebert, mobilenet_v1, mobilenet_v2, mobilevit, mobilevitv2, modernbert, moonshine, moshi, mpnet, mpt, mra, mt5, musicgen, musicgen_melody, mvp, nat, nemotron, nezha, nllb-moe, nougat, nystromformer, olmo, olmo2, olmoe, omdet-turbo, oneformer, open-llama, openai-gpt, opt, owlv2, owlvit, paligemma, patchtsmixer, patchtst, pegasus, pegasus_x, perceiver, persimmon, phi, phi3, phimoe, pix2struct, pixtral, plbart, poolformer, pop2piano, prophetnet, pvt, pvt_v2, qdqbert, qwen2, qwen2_5_vl, qwen2_audio, qwen2_audio_encoder, qwen2_moe, qwen2_vl, rag, realm, recurrent_gemma, reformer, regnet, rembert, resnet, retribert, roberta, roberta-prelayernorm, roc_bert, roformer, rt_detr, rt_detr_resnet, rt_detr_v2, rwkv, sam, seamless_m4t, seamless_m4t_v2, segformer, seggpt, sew, sew-d, siglip, siglip_vision_model, speech-encoder-decoder, speech_to_text, speech_to_text_2, speecht5, splinter, squeezebert, stablelm, starcoder2, superglue, superpoint, swiftformer, swin, swin2sr, swinv2, switch_transformers, t5, table-transformer, tapas, textnet, time_series_transformer, timesformer, timm_backbone, timm_wrapper, trajectory_transformer, transfo-xl, trocr, tvlt, tvp, udop, umt5, unispeech, unispeech-sat, univnet, upernet, van, video_llava, videomae, vilt, vipllava, vision-encoder-decoder, vision-text-dual-encoder, visual_bert, vit, vit_hybrid, vit_mae, vit_msn, vitdet, vitmatte, vitpose, vitpose_backbone, vits, vivit, wav2vec2, wav2vec2-bert, wav2vec2-conformer, wavlm, whisper, xclip, xglm, xlm, xlm-prophetnet, xlm-roberta, xlm-roberta-xl, xlnet, xmod, yolos, yoso, zamba, zamba2, zoedepth
+2025-04-27 13:54:48,581 - app.chat_controller - INFO - Fallback to original prompt: các em nhá.
+2025-04-27 13:54:48,581 - app.db - INFO - Getting chat history.
+2025-04-27 13:54:48,583 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:54:48,587 - app.db - INFO - Successfully retrieved 7 conversation turns
+2025-04-27 13:54:48,587 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: các em nhá.
+2025-04-27 13:54:48,587 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 13:54:48,680 - app.intent_detector - INFO - Detected intent: câu hỏi chuyên môn for input: các em nhá.
+2025-04-27 13:54:48,681 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 13:54:48,681 - app.langchain - INFO - Detected intent: câu hỏi chuyên môn | Requires context: False
+2025-04-27 13:54:48,681 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 13:54:50,559 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 13:54:50,559 - app.db - INFO - Inserting application logs.
+2025-04-27 13:54:50,561 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:54:50,564 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 13:54:50,565 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Chào bạn! Để mình có thể hỗ trợ bạn tốt nhất về các vấn đề trang điểm hoặc chăm sóc da, bạn có thể cho mình biết bạn muốn hỏi về điều gì cụ thể hơn được không ạ? Ví dụ như bạn quan tâm đến loại sản phẩm nào, hoặc bạn đang gặp vấn đề gì về da chẳng hạn?
+2025-04-27 13:59:34,901 - app.chat_controller - INFO - User Query: ừ chị trung.
+2025-04-27 13:59:34,901 - app.langchain - INFO - Using Google Gemini model: QueryRewritingModel.GEMINI_2_FLASH
+2025-04-27 13:59:34,904 - app.chat_controller - ERROR - Error while rewriting prompt: Invalid input type <class 'dict'>. Must be a PromptValue, str, or list of BaseMessages.
+2025-04-27 13:59:34,904 - app.chat_controller - INFO - Fallback to original prompt: ừ chị trung.
+2025-04-27 13:59:34,904 - app.db - INFO - Getting chat history.
+2025-04-27 13:59:34,906 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:59:34,911 - app.db - INFO - Successfully retrieved 8 conversation turns
+2025-04-27 13:59:34,912 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: ừ chị trung.
+2025-04-27 13:59:34,912 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 13:59:35,000 - app.intent_detector - INFO - Detected intent: nói chuyện phiếm for input: ừ chị trung.
+2025-04-27 13:59:35,000 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 13:59:35,001 - app.langchain - INFO - Detected intent: nói chuyện phiếm | Requires context: False
+2025-04-27 13:59:35,001 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 13:59:36,322 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 13:59:36,322 - app.db - INFO - Inserting application logs.
+2025-04-27 13:59:36,323 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:59:36,326 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 13:59:36,326 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Chào bạn! Để có thể giúp bạn tốt nhất, bạn có thể cho mình biết bạn muốn hỏi gì về trang điểm hoặc chăm sóc da không ạ? Ví dụ như bạn muốn biết về sản phẩm nào, cách trang điểm ra sao, hay có vấn đề gì về da cần được tư vấn không? Mình rất vui được hỗ trợ bạn!
+2025-04-27 13:59:43,012 - app.audio_controller - INFO - Speech: xin chọn.
+2025-04-27 13:59:43,019 - app.chat_controller - INFO - User Query: xin chọn.
+2025-04-27 13:59:43,019 - app.langchain - INFO - Using Google Gemini model: QueryRewritingModel.GEMINI_2_FLASH
+2025-04-27 13:59:43,020 - app.chat_controller - ERROR - Error while rewriting prompt: Invalid input type <class 'dict'>. Must be a PromptValue, str, or list of BaseMessages.
+2025-04-27 13:59:43,021 - app.chat_controller - INFO - Fallback to original prompt: xin chọn.
+2025-04-27 13:59:43,021 - app.db - INFO - Getting chat history.
+2025-04-27 13:59:43,023 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:59:43,027 - app.db - INFO - Successfully retrieved 9 conversation turns
+2025-04-27 13:59:43,027 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: xin chọn.
+2025-04-27 13:59:43,027 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 13:59:43,104 - app.intent_detector - INFO - Detected intent: nói chuyện phiếm for input: xin chọn.
+2025-04-27 13:59:43,105 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 13:59:43,105 - app.langchain - INFO - Detected intent: nói chuyện phiếm | Requires context: False
+2025-04-27 13:59:43,105 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 13:59:44,198 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 13:59:44,198 - app.db - INFO - Inserting application logs.
+2025-04-27 13:59:44,200 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:59:44,203 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 13:59:44,204 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Tôi rất vui được giúp bạn! Bạn có thể cho tôi biết thêm một chút về những gì bạn muốn tôi chọn không? Bạn có quan tâm đến trang điểm, chăm sóc da, hay một chủ đề khác? Nếu đó là trang điểm hoặc chăm sóc da, bạn có thể cho tôi biết thêm về loại sản phẩm, mối quan tâm hoặc mục tiêu của bạn không? Càng có nhiều thông tin, tôi càng có thể đưa ra các đề xuất phù hợp hơn.
+2025-04-27 13:59:52,158 - app.audio_controller - INFO - Speech: cứ để xin chào.
+2025-04-27 13:59:52,164 - app.chat_controller - INFO - User Query: cứ để xin chào.
+2025-04-27 13:59:52,164 - app.langchain - INFO - Using Google Gemini model: QueryRewritingModel.GEMINI_2_FLASH
+2025-04-27 13:59:52,166 - app.chat_controller - ERROR - Error while rewriting prompt: Invalid input type <class 'dict'>. Must be a PromptValue, str, or list of BaseMessages.
+2025-04-27 13:59:52,166 - app.chat_controller - INFO - Fallback to original prompt: cứ để xin chào.
+2025-04-27 13:59:52,166 - app.db - INFO - Getting chat history.
+2025-04-27 13:59:52,168 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:59:52,173 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 13:59:52,174 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: cứ để xin chào.
+2025-04-27 13:59:52,174 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 13:59:52,251 - app.intent_detector - INFO - Detected intent: nói chuyện phiếm for input: cứ để xin chào.
+2025-04-27 13:59:52,251 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 13:59:52,251 - app.langchain - INFO - Detected intent: nói chuyện phiếm | Requires context: False
+2025-04-27 13:59:52,252 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 13:59:53,188 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 13:59:53,188 - app.db - INFO - Inserting application logs.
+2025-04-27 13:59:53,190 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 13:59:53,193 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 13:59:53,194 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Xin chào! Tôi có thể giúp gì cho bạn hôm nay? Bạn có câu hỏi nào về trang điểm hoặc chăm sóc da mà tôi có thể giúp bạn không? Nếu bạn có thể cho tôi biết thêm một chút về những gì bạn đang tìm kiếm, tôi sẽ cố gắng hết sức để cung cấp cho bạn thông tin hữu ích.
+2025-04-27 14:01:23,853 - app.chat_controller - INFO - User Query: ừ chị trung.
+2025-04-27 14:01:23,853 - app.langchain - INFO - Using Google Gemini model: QueryRewritingModel.GEMINI_2_FLASH
+2025-04-27 14:01:23,855 - app.chat_controller - ERROR - Error while rewriting prompt: Invalid input type <class 'dict'>. Must be a PromptValue, str, or list of BaseMessages.
+2025-04-27 14:01:23,856 - app.chat_controller - INFO - Fallback to original prompt: ừ chị trung.
+2025-04-27 14:01:23,856 - app.db - INFO - Getting chat history.
+2025-04-27 14:01:23,857 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:01:23,866 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 14:01:23,867 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: ừ chị trung.
+2025-04-27 14:01:23,867 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:01:23,950 - app.intent_detector - INFO - Detected intent: nói chuyện phiếm for input: ừ chị trung.
+2025-04-27 14:01:23,950 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 14:01:23,950 - app.langchain - INFO - Detected intent: nói chuyện phiếm | Requires context: False
+2025-04-27 14:01:23,950 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 14:01:25,046 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 14:01:25,046 - app.db - INFO - Inserting application logs.
+2025-04-27 14:01:25,048 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:01:25,051 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 14:01:25,051 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Chào bạn! Để có thể giúp bạn tốt nhất, bạn có thể cho mình biết bạn muốn hỏi gì về trang điểm hoặc chăm sóc da không ạ? Ví dụ như bạn đang quan tâm đến sản phẩm nào, muốn tìm hiểu về kỹ thuật trang điểm nào, hay có vấn đề gì về da cần được tư vấn không? Mình rất sẵn lòng hỗ trợ bạn!
+2025-04-27 14:01:31,165 - app.audio_controller - INFO - Speech: ừ.
+2025-04-27 14:01:31,171 - app.chat_controller - INFO - User Query: ừ.
+2025-04-27 14:01:31,172 - app.langchain - INFO - Using Google Gemini model: QueryRewritingModel.GEMINI_2_FLASH
+2025-04-27 14:01:31,173 - app.chat_controller - ERROR - Error while rewriting prompt: Invalid input type <class 'dict'>. Must be a PromptValue, str, or list of BaseMessages.
+2025-04-27 14:01:31,173 - app.chat_controller - INFO - Fallback to original prompt: ừ.
+2025-04-27 14:01:31,173 - app.db - INFO - Getting chat history.
+2025-04-27 14:01:31,174 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:01:31,179 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 14:01:31,180 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: ừ.
+2025-04-27 14:01:31,180 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:01:31,228 - app.intent_detector - INFO - Detected intent: nói chuyện phiếm for input: ừ.
+2025-04-27 14:01:31,229 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 14:01:31,229 - app.langchain - INFO - Detected intent: nói chuyện phiếm | Requires context: False
+2025-04-27 14:01:31,229 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 14:01:33,230 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 14:01:33,230 - app.db - INFO - Inserting application logs.
+2025-04-27 14:01:33,232 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:01:33,235 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 14:01:33,237 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Chào bạn! Để có thể giúp bạn tốt nhất về trang điểm hoặc chăm sóc da, bạn có thể cho mình biết bạn đang quan tâm đến điều gì cụ thể không? Ví dụ như bạn muốn hỏi về sản phẩm nào, kỹ thuật trang điểm nào, hay vấn đề da nào bạn đang gặp phải? Càng có nhiều thông tin, mình càng có thể đưa ra lời khuyên hữu ích hơn!
+2025-04-27 14:02:45,240 - app.audio_controller - INFO - Speech: học tại vì sao.
+2025-04-27 14:02:45,247 - app.chat_controller - INFO - User Query: học tại vì sao.
+2025-04-27 14:02:45,247 - app.langchain - INFO - Using Google Gemini model: QueryRewritingModel.GEMINI_2_FLASH
+2025-04-27 14:02:45,248 - app.chat_controller - ERROR - Error while rewriting prompt: Invalid input type <class 'dict'>. Must be a PromptValue, str, or list of BaseMessages.
+2025-04-27 14:02:45,248 - app.chat_controller - INFO - Fallback to original prompt: học tại vì sao.
+2025-04-27 14:02:45,248 - app.db - INFO - Getting chat history.
+2025-04-27 14:02:45,249 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:02:45,254 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 14:02:45,254 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: học tại vì sao.
+2025-04-27 14:02:45,254 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:02:45,328 - app.intent_detector - INFO - Detected intent: nói chuyện phiếm for input: học tại vì sao.
+2025-04-27 14:02:45,328 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 14:02:45,328 - app.langchain - INFO - Detected intent: nói chuyện phiếm | Requires context: False
+2025-04-27 14:02:45,329 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 14:02:46,184 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 14:02:46,185 - app.db - INFO - Inserting application logs.
+2025-04-27 14:02:46,186 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:02:46,190 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 14:02:46,191 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Tôi xin lỗi, tôi không hiểu câu hỏi của bạn. Bạn có thể cho tôi biết bạn muốn biết thêm về trang điểm hoặc chăm sóc da không?
+2025-04-27 14:03:10,896 - app.audio_controller - INFO - Speech: lận chi trả.
+2025-04-27 14:03:10,910 - app.chat_controller - INFO - User Query: lận chi trả.
+2025-04-27 14:03:10,910 - app.chat_controller - ERROR - Error while rewriting prompt: 'str' object has no attribute 'value'
+2025-04-27 14:03:10,910 - app.chat_controller - INFO - Fallback to original prompt: lận chi trả.
+2025-04-27 14:03:10,910 - app.db - INFO - Getting chat history.
+2025-04-27 14:03:10,912 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:03:10,917 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 14:03:10,917 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: lận chi trả.
+2025-04-27 14:03:10,917 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:03:11,009 - app.intent_detector - INFO - Detected intent: phản hồi for input: lận chi trả.
+2025-04-27 14:03:11,009 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 14:03:11,009 - app.langchain - INFO - Detected intent: phản hồi | Requires context: False
+2025-04-27 14:03:11,010 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 14:03:12,723 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 14:03:12,723 - app.db - INFO - Inserting application logs.
+2025-04-27 14:03:12,725 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:03:12,728 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 14:03:12,729 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Tôi xin lỗi, tôi không hiểu rõ câu hỏi của bạn. Bạn có thể cho tôi biết thêm về những gì bạn đang hỏi không? Ví dụ, bạn có thể cho tôi biết bạn đang hỏi về trang điểm hay chăm sóc da?
+2025-04-27 14:04:26,555 - app.chat_controller - INFO - User Query: yêu cầu việt.
+2025-04-27 14:04:26,556 - app.chat_controller - ERROR - Error while rewriting prompt: 'str' object has no attribute 'value'
+2025-04-27 14:04:26,556 - app.chat_controller - INFO - Fallback to original prompt: yêu cầu việt.
+2025-04-27 14:04:26,556 - app.db - INFO - Getting chat history.
+2025-04-27 14:04:26,559 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:04:26,563 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 14:04:26,564 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: yêu cầu việt.
+2025-04-27 14:04:26,564 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:04:26,660 - app.intent_detector - INFO - Detected intent: câu hỏi chuyên môn for input: yêu cầu việt.
+2025-04-27 14:04:26,660 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 14:04:26,660 - app.langchain - INFO - Detected intent: câu hỏi chuyên môn | Requires context: False
+2025-04-27 14:04:26,661 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 14:04:28,350 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 14:04:28,350 - app.db - INFO - Inserting application logs.
+2025-04-27 14:04:28,351 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:04:28,354 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 14:04:28,355 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Chào bạn! Để tôi có thể giúp bạn tốt nhất về các chủ đề trang điểm hoặc chăm sóc da, bạn có thể cho tôi biết cụ thể hơn bạn muốn hỏi về điều gì không? Ví dụ như bạn muốn biết về:
+
+*   **Sản phẩm cụ thể:** Bạn đang tìm kiếm loại kem chống nắng nào, hay muốn biết về một loại son mới ra mắt?
+*   **Kỹ thuật trang điểm:** Bạn muốn học cách đánh mắt khói, hay che quầng thâm mắt hiệu quả?
+*   **Vấn đề về da:** Bạn đang gặp vấn đề về mụn, da khô, hay muốn tìm cách làm sáng da?
+
+Càng có nhiều thông tin, tôi càng có thể đưa ra những gợi ý và lời khuyên hữu ích cho bạn.
+2025-04-27 14:05:46,166 - app.audio_controller - INFO - Speech: xin chào.
+2025-04-27 14:05:46,180 - app.chat_controller - INFO - User Query: xin chào.
+2025-04-27 14:05:46,180 - app.chat_controller - ERROR - Error while rewriting prompt: 'str' object has no attribute 'value'
+2025-04-27 14:05:46,180 - app.chat_controller - INFO - Fallback to original prompt: xin chào.
+2025-04-27 14:05:46,180 - app.db - INFO - Getting chat history.
+2025-04-27 14:05:46,182 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:05:46,186 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 14:05:46,186 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: xin chào.
+2025-04-27 14:05:46,186 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:05:46,262 - app.intent_detector - INFO - Detected intent: phản hồi for input: xin chào.
+2025-04-27 14:05:46,262 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 14:05:46,262 - app.langchain - INFO - Detected intent: phản hồi | Requires context: False
+2025-04-27 14:05:46,263 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 14:05:47,385 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 14:05:47,385 - app.db - INFO - Inserting application logs.
+2025-04-27 14:05:47,386 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:05:47,389 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 14:05:47,390 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Chào bạn! Mình có thể giúp gì cho bạn về trang điểm hoặc chăm sóc da không? Nếu bạn có thể cho mình biết bạn đang quan tâm đến điều gì, mình sẽ cố gắng hết sức để hỗ trợ bạn. Ví dụ, bạn có thể đang tìm kiếm lời khuyên về một sản phẩm cụ thể, một kỹ thuật trang điểm mới hoặc cách giải quyết một vấn đề về da.
+2025-04-27 14:06:54,961 - app.audio_controller - INFO - Speech: xin chào xin chào xin chào.
+2025-04-27 14:06:54,974 - app.chat_controller - INFO - User Query: xin chào xin chào xin chào.
+2025-04-27 14:06:54,974 - app.langchain - INFO - Using gemini-2.0-flash to rewrite prompt
+2025-04-27 14:06:54,974 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:06:54,976 - app.chat_controller - ERROR - Error while rewriting prompt: Invalid input type <class 'dict'>. Must be a PromptValue, str, or list of BaseMessages.
+2025-04-27 14:06:54,976 - app.chat_controller - INFO - Fallback to original prompt: xin chào xin chào xin chào.
+2025-04-27 14:06:54,976 - app.db - INFO - Getting chat history.
+2025-04-27 14:06:54,978 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:06:54,983 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 14:06:54,983 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: xin chào xin chào xin chào.
+2025-04-27 14:06:54,983 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:06:55,072 - app.intent_detector - INFO - Detected intent: câu hỏi chuyên môn for input: xin chào xin chào xin chào.
+2025-04-27 14:06:55,072 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 14:06:55,073 - app.langchain - INFO - Detected intent: câu hỏi chuyên môn | Requires context: False
+2025-04-27 14:06:55,073 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 14:06:56,083 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 14:06:56,083 - app.db - INFO - Inserting application logs.
+2025-04-27 14:06:56,084 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:06:56,087 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 14:06:56,088 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Xin chào! Tôi có thể giúp gì cho bạn về trang điểm hoặc chăm sóc da không? Vui lòng cho tôi biết bạn có câu hỏi hoặc chủ đề cụ thể nào bạn muốn tôi hỗ trợ để tôi có thể cung cấp cho bạn những thông tin tốt nhất.
+2025-04-27 14:10:36,255 - app.audio_controller - INFO - Speech: nằm xin chào xin chào xin chào xin chào.
+2025-04-27 14:10:36,269 - app.chat_controller - INFO - User Query: nằm xin chào xin chào xin chào xin chào.
+2025-04-27 14:10:36,269 - app.langchain - INFO - Using gemini-2.0-flash to rewrite prompt
+2025-04-27 14:10:36,269 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:10:36,272 - app.langchain - INFO - Prompt for rewritin: Please rewrite this prompt to make it clearer and more accurate: nằm xin chào xin chào xin chào xin chào.
+2025-04-27 14:10:36,272 - app.chat_controller - ERROR - Error while rewriting prompt: Invalid input type <class 'dict'>. Must be a PromptValue, str, or list of BaseMessages.
+2025-04-27 14:10:36,272 - app.chat_controller - INFO - Fallback to original prompt: nằm xin chào xin chào xin chào xin chào.
+2025-04-27 14:10:36,272 - app.db - INFO - Getting chat history.
+2025-04-27 14:10:36,274 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:10:36,279 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 14:10:36,279 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: nằm xin chào xin chào xin chào xin chào.
+2025-04-27 14:10:36,279 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:10:36,397 - app.intent_detector - INFO - Detected intent: không liên quan for input: nằm xin chào xin chào xin chào xin chào.
+2025-04-27 14:10:36,397 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 14:10:36,398 - app.langchain - INFO - Detected intent: không liên quan | Requires context: False
+2025-04-27 14:10:36,398 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 14:10:37,167 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 14:10:37,167 - app.db - INFO - Inserting application logs.
+2025-04-27 14:10:37,168 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:10:37,172 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 14:10:37,174 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Xin chào! Tôi có thể giúp gì cho bạn về trang điểm hoặc chăm sóc da không? Bạn có thể cho tôi biết bạn muốn biết thêm về điều gì không?
+2025-04-27 14:12:17,233 - app.audio_controller - INFO - Speech: hử xin chào.
+2025-04-27 14:12:17,250 - app.chat_controller - INFO - User Query: hử xin chào.
+2025-04-27 14:12:17,250 - app.langchain - INFO - Using gemini-2.0-flash to rewrite prompt
+2025-04-27 14:12:17,250 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:12:17,253 - app.langchain - INFO - Prompt for rewritin: Please rewrite this prompt to make it clearer and more accurate: hử xin chào.
+2025-04-27 14:12:19,499 - app.langchain - INFO - Rewritten prompt: content='The original prompt "hử xin chào" appears to be Vietnamese. It\'s unclear what action the user wants to be performed on this phrase. Here are a few possible interpretations and corresponding rewritten prompts, depending on the intended goal:\n\n**1.  If the user wants to know the meaning of the phrase:**\n\n*   **Rewritten Prompt:** "What does \'hử xin chào\' mean in English?"\n*   **Rewritten Prompt:** "Translate \'hử xin chào\' from Vietnamese to English."\n*   **Rewritten Prompt:** "Can you explain the meaning of the Vietnamese phrase \'hử xin chào\'?"\n\n**2. If the user wants to know if it\'s a proper greeting:**\n\n*   **Rewritten Prompt:** "Is \'hử xin chào\' a common or polite way to say hello in Vietnamese?"\n*   **Rewritten Prompt:** "How appropriate is the Vietnamese phrase \'hử xin chào\' as a greeting?"\n\n**3. If the user wants to know the individual meanings of the words:**\n\n*   **Rewritten Prompt:** "What does \'hử\' mean in Vietnamese?"\n*   **Rewritten Prompt:** "What does \'xin chào\' mean in Vietnamese?"\n\n**4. If the user wants to know the correct spelling or pronunciation:**\n\n*   **Rewritten Prompt:** "Is the spelling \'hử xin chào\' correct?"\n*   **Rewritten Prompt:** "How do you pronounce \'hử xin chào\' in Vietnamese?"\n\n**In summary, the best rewritten prompt depends on the user\'s underlying intention.  More context would be helpful to provide the most accurate and clear prompt.**' additional_kwargs={} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'safety_ratings': []} id='run-dcbe8df6-544f-4232-8962-1c20d7da00cd-0' usage_metadata={'input_tokens': 17, 'output_tokens': 348, 'total_tokens': 365, 'input_token_details': {'cache_read': 0}}
+2025-04-27 14:12:19,500 - app.chat_controller - INFO - Rewritten Prompt: content='The original prompt "hử xin chào" appears to be Vietnamese. It\'s unclear what action the user wants to be performed on this phrase. Here are a few possible interpretations and corresponding rewritten prompts, depending on the intended goal:\n\n**1.  If the user wants to know the meaning of the phrase:**\n\n*   **Rewritten Prompt:** "What does \'hử xin chào\' mean in English?"\n*   **Rewritten Prompt:** "Translate \'hử xin chào\' from Vietnamese to English."\n*   **Rewritten Prompt:** "Can you explain the meaning of the Vietnamese phrase \'hử xin chào\'?"\n\n**2. If the user wants to know if it\'s a proper greeting:**\n\n*   **Rewritten Prompt:** "Is \'hử xin chào\' a common or polite way to say hello in Vietnamese?"\n*   **Rewritten Prompt:** "How appropriate is the Vietnamese phrase \'hử xin chào\' as a greeting?"\n\n**3. If the user wants to know the individual meanings of the words:**\n\n*   **Rewritten Prompt:** "What does \'hử\' mean in Vietnamese?"\n*   **Rewritten Prompt:** "What does \'xin chào\' mean in Vietnamese?"\n\n**4. If the user wants to know the correct spelling or pronunciation:**\n\n*   **Rewritten Prompt:** "Is the spelling \'hử xin chào\' correct?"\n*   **Rewritten Prompt:** "How do you pronounce \'hử xin chào\' in Vietnamese?"\n\n**In summary, the best rewritten prompt depends on the user\'s underlying intention.  More context would be helpful to provide the most accurate and clear prompt.**' additional_kwargs={} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'safety_ratings': []} id='run-dcbe8df6-544f-4232-8962-1c20d7da00cd-0' usage_metadata={'input_tokens': 17, 'output_tokens': 348, 'total_tokens': 365, 'input_token_details': {'cache_read': 0}}
+2025-04-27 14:12:19,500 - app.db - INFO - Getting chat history.
+2025-04-27 14:12:19,502 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:12:19,506 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 14:12:19,506 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: content='The original prompt "hử xin chào" appears to be Vietnamese. It\'s unclear what action the user wants to be performed on this phrase. Here are a few possible interpretations and corresponding rewritten prompts, depending on the intended goal:\n\n**1.  If the user wants to know the meaning of the phrase:**\n\n*   **Rewritten Prompt:** "What does \'hử xin chào\' mean in English?"\n*   **Rewritten Prompt:** "Translate \'hử xin chào\' from Vietnamese to English."\n*   **Rewritten Prompt:** "Can you explain the meaning of the Vietnamese phrase \'hử xin chào\'?"\n\n**2. If the user wants to know if it\'s a proper greeting:**\n\n*   **Rewritten Prompt:** "Is \'hử xin chào\' a common or polite way to say hello in Vietnamese?"\n*   **Rewritten Prompt:** "How appropriate is the Vietnamese phrase \'hử xin chào\' as a greeting?"\n\n**3. If the user wants to know the individual meanings of the words:**\n\n*   **Rewritten Prompt:** "What does \'hử\' mean in Vietnamese?"\n*   **Rewritten Prompt:** "What does \'xin chào\' mean in Vietnamese?"\n\n**4. If the user wants to know the correct spelling or pronunciation:**\n\n*   **Rewritten Prompt:** "Is the spelling \'hử xin chào\' correct?"\n*   **Rewritten Prompt:** "How do you pronounce \'hử xin chào\' in Vietnamese?"\n\n**In summary, the best rewritten prompt depends on the user\'s underlying intention.  More context would be helpful to provide the most accurate and clear prompt.**' additional_kwargs={} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'safety_ratings': []} id='run-dcbe8df6-544f-4232-8962-1c20d7da00cd-0' usage_metadata={'input_tokens': 17, 'output_tokens': 348, 'total_tokens': 365, 'input_token_details': {'cache_read': 0}}
+2025-04-27 14:12:19,506 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:14:19,851 - app.audio_controller - INFO - Speech: đi xin chào xin chào xin chào.
+2025-04-27 14:14:19,863 - app.chat_controller - INFO - User Query: đi xin chào xin chào xin chào.
+2025-04-27 14:14:19,863 - app.langchain - INFO - Using gemini-2.0-flash to rewrite prompt
+2025-04-27 14:14:19,864 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:14:19,866 - app.langchain - INFO - Prompt for rewritin: Please rewrite this prompt to make it clearer and more accurate: đi xin chào xin chào xin chào.
+2025-04-27 14:14:22,119 - app.langchain - INFO - Rewritten prompt: content='Here are a few ways to rewrite "đi xin chào xin chào xin chào," depending on the intended meaning and context:\n\n**Options focusing on the act of greeting repeatedly:**\n\n*   **Going to say hello repeatedly.** (Simple and direct)\n*   **Going to greet everyone enthusiastically.** (Emphasizes enthusiasm)\n*   **Heading out to greet people with a lot of hellos.** (More descriptive)\n*   **Going to greet, greet, and greet!** (Maintains the repetition, adds excitement)\n\n**Options focusing on the purpose of going somewhere:**\n\n*   **Going to greet people.** (If the repeated greeting isn\'t the main point)\n*   **Heading out to say hello.** (Similar to above)\n\n**Important Considerations:**\n\n*   **Context:** The best rewrite depends heavily on the situation.  Knowing *who* is greeting *whom* and *why* would help narrow it down further.\n*   **Tone:** The original phrase sounds quite repetitive, perhaps playful or even a little frantic. The rewrite should try to capture that tone if it\'s important.\n*   **"Đi"**: The word "đi" in Vietnamese implies movement or going somewhere. The rewrite should reflect this.\n\n**Example using context:**\n\nIf the person is going to a party and is known for being very friendly:\n\n*   **Going to the party to say hello to everyone!**\n\nUltimately, the clearest and most accurate rewrite will depend on providing more context about the situation.' additional_kwargs={} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'safety_ratings': []} id='run-f80d64a9-f86a-4f00-81a6-c58c418fc943-0' usage_metadata={'input_tokens': 20, 'output_tokens': 318, 'total_tokens': 338, 'input_token_details': {'cache_read': 0}}
+2025-04-27 14:14:22,119 - app.chat_controller - INFO - Rewritten Prompt: Here are a few ways to rewrite "đi xin chào xin chào xin chào," depending on the intended meaning and context:
+
+**Options focusing on the act of greeting repeatedly:**
+
+*   **Going to say hello repeatedly.** (Simple and direct)
+*   **Going to greet everyone enthusiastically.** (Emphasizes enthusiasm)
+*   **Heading out to greet people with a lot of hellos.** (More descriptive)
+*   **Going to greet, greet, and greet!** (Maintains the repetition, adds excitement)
+
+**Options focusing on the purpose of going somewhere:**
+
+*   **Going to greet people.** (If the repeated greeting isn't the main point)
+*   **Heading out to say hello.** (Similar to above)
+
+**Important Considerations:**
+
+*   **Context:** The best rewrite depends heavily on the situation.  Knowing *who* is greeting *whom* and *why* would help narrow it down further.
+*   **Tone:** The original phrase sounds quite repetitive, perhaps playful or even a little frantic. The rewrite should try to capture that tone if it's important.
+*   **"Đi"**: The word "đi" in Vietnamese implies movement or going somewhere. The rewrite should reflect this.
+
+**Example using context:**
+
+If the person is going to a party and is known for being very friendly:
+
+*   **Going to the party to say hello to everyone!**
+
+Ultimately, the clearest and most accurate rewrite will depend on providing more context about the situation.
+2025-04-27 14:14:22,119 - app.db - INFO - Getting chat history.
+2025-04-27 14:14:22,122 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:14:22,127 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 14:14:22,127 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: Here are a few ways to rewrite "đi xin chào xin chào xin chào," depending on the intended meaning and context:
+
+**Options focusing on the act of greeting repeatedly:**
+
+*   **Going to say hello repeatedly.** (Simple and direct)
+*   **Going to greet everyone enthusiastically.** (Emphasizes enthusiasm)
+*   **Heading out to greet people with a lot of hellos.** (More descriptive)
+*   **Going to greet, greet, and greet!** (Maintains the repetition, adds excitement)
+
+**Options focusing on the purpose of going somewhere:**
+
+*   **Going to greet people.** (If the repeated greeting isn't the main point)
+*   **Heading out to say hello.** (Similar to above)
+
+**Important Considerations:**
+
+*   **Context:** The best rewrite depends heavily on the situation.  Knowing *who* is greeting *whom* and *why* would help narrow it down further.
+*   **Tone:** The original phrase sounds quite repetitive, perhaps playful or even a little frantic. The rewrite should try to capture that tone if it's important.
+*   **"Đi"**: The word "đi" in Vietnamese implies movement or going somewhere. The rewrite should reflect this.
+
+**Example using context:**
+
+If the person is going to a party and is known for being very friendly:
+
+*   **Going to the party to say hello to everyone!**
+
+Ultimately, the clearest and most accurate rewrite will depend on providing more context about the situation.
+2025-04-27 14:14:22,127 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:14:22,569 - app.intent_detector - INFO - Detected intent: cảm ơn for input: Here are a few ways to rewrite "đi xin chào xin chào xin chào," depending on the intended meaning and context:
+
+**Options focusing on the act of greeting repeatedly:**
+
+*   **Going to say hello repeatedly.** (Simple and direct)
+*   **Going to greet everyone enthusiastically.** (Emphasizes enthusiasm)
+*   **Heading out to greet people with a lot of hellos.** (More descriptive)
+*   **Going to greet, greet, and greet!** (Maintains the repetition, adds excitement)
+
+**Options focusing on the purpose of going somewhere:**
+
+*   **Going to greet people.** (If the repeated greeting isn't the main point)
+*   **Heading out to say hello.** (Similar to above)
+
+**Important Considerations:**
+
+*   **Context:** The best rewrite depends heavily on the situation.  Knowing *who* is greeting *whom* and *why* would help narrow it down further.
+*   **Tone:** The original phrase sounds quite repetitive, perhaps playful or even a little frantic. The rewrite should try to capture that tone if it's important.
+*   **"Đi"**: The word "đi" in Vietnamese implies movement or going somewhere. The rewrite should reflect this.
+
+**Example using context:**
+
+If the person is going to a party and is known for being very friendly:
+
+*   **Going to the party to say hello to everyone!**
+
+Ultimately, the clearest and most accurate rewrite will depend on providing more context about the situation.
+2025-04-27 14:14:22,569 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 14:14:22,569 - app.langchain - INFO - Detected intent: cảm ơn | Requires context: False
+2025-04-27 14:14:22,570 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 14:14:25,045 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 14:14:25,045 - app.db - INFO - Inserting application logs.
+2025-04-27 14:14:25,046 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:14:25,049 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 14:14:25,050 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Câu hỏi của bạn rất hay! Để tôi có thể giúp bạn tốt nhất có thể về các chủ đề trang điểm hoặc chăm sóc da, bạn có thể vui lòng cho tôi biết thêm chi tiết về những gì bạn muốn biết không? Ví dụ, bạn có thể cho tôi biết:
+
+*   Bạn quan tâm đến loại sản phẩm trang điểm hoặc chăm sóc da cụ thể nào?
+*   Bạn muốn biết về kỹ thuật trang điểm nào?
+*   Bạn có loại da nào (ví dụ: da dầu, da khô, da hỗn hợp)?
+*   Bạn có bất kỳ vấn đề cụ thể nào về da mà bạn muốn giải quyết (ví dụ: mụn trứng cá, nếp nhăn, da không đều màu)?
+
+Khi tôi có thêm thông tin, tôi có thể cung cấp cho bạn những lời khuyên và thông tin chi tiết hơn.
+2025-04-27 14:19:21,850 - app.audio_controller - INFO - Speech: dịu chợ phiên chợ phi.
+2025-04-27 14:19:21,860 - app.chat_controller - INFO - User Query: dịu chợ phiên chợ phi.
+2025-04-27 14:19:21,860 - app.langchain - INFO - Using gemini-2.0-flash to rewrite prompt
+2025-04-27 14:19:21,860 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:19:21,862 - app.langchain - INFO - Prompt for rewritin: Please rewrite this prompt to make it clearer and more accurate: dịu chợ phiên chợ phi.
+2025-04-27 14:19:25,198 - app.langchain - INFO - Rewritten prompt: content='The prompt "dịu chợ phiên chợ phi" is unclear and likely contains errors. It seems to be attempting to reference Vietnamese market terms, but the words are either misspelled or used in an uncommon way.\n\nHere are a few possible interpretations and corresponding rewrites, depending on the intended meaning:\n\n**Interpretation 1: Referring to a "diu" (carrying pole) used in traditional markets (chợ phiên).**\n\n*   **Clearer Prompt:** Describe the use of a "diu" (carrying pole) in traditional Vietnamese "chợ phiên" (periodic markets).\n\n**Interpretation 2: Referring to the experience of calming down after the hustle and bustle of a traditional market (chợ phiên).**\n\n*   **Clearer Prompt:** Describe the feeling of calmness ("diu") after leaving a busy Vietnamese "chợ phiên" (periodic market).\n\n**Interpretation 3: "Chợ phiên" contrasted with something else (perhaps another type of market, but the term "chợ phi" is incorrect or missing context).**\n\n*   **Clearer Prompt (requires more information):** "Compare and contrast the atmosphere and offerings of a Vietnamese "chợ phiên" (periodic market) with [another type of market, e.g., a modern supermarket, a tourist market, etc.].  Replace "[another type of market]" with the intended comparison."\n\n**Explanation of Terms:**\n\n*   **Chợ phiên:** A periodic market, often held in rural areas of Vietnam, that occurs on specific days of the week or month. They are known for their traditional goods, vibrant atmosphere, and social interactions.\n*   **Dịu:**  Can mean gentle, soft, calm, or soothing.\n*   **Diu (with an acute accent):** A carrying pole used to balance baskets or goods on either end.\n*   **Chợ phi:** This term is not standard Vietnamese and likely contains a mistake or is used in a very specific regional context.\n\n**To provide the best rewrite, please clarify the intended meaning of "dịu chợ phiên chợ phi."**  What were you trying to ask?' additional_kwargs={} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'safety_ratings': []} id='run-107b780b-e188-4268-8db1-1f635e64df74-0' usage_metadata={'input_tokens': 19, 'output_tokens': 440, 'total_tokens': 459, 'input_token_details': {'cache_read': 0}}
+2025-04-27 14:19:25,198 - app.chat_controller - INFO - Rewritten Prompt: The prompt "dịu chợ phiên chợ phi" is unclear and likely contains errors. It seems to be attempting to reference Vietnamese market terms, but the words are either misspelled or used in an uncommon way.
+
+Here are a few possible interpretations and corresponding rewrites, depending on the intended meaning:
+
+**Interpretation 1: Referring to a "diu" (carrying pole) used in traditional markets (chợ phiên).**
+
+*   **Clearer Prompt:** Describe the use of a "diu" (carrying pole) in traditional Vietnamese "chợ phiên" (periodic markets).
+
+**Interpretation 2: Referring to the experience of calming down after the hustle and bustle of a traditional market (chợ phiên).**
+
+*   **Clearer Prompt:** Describe the feeling of calmness ("diu") after leaving a busy Vietnamese "chợ phiên" (periodic market).
+
+**Interpretation 3: "Chợ phiên" contrasted with something else (perhaps another type of market, but the term "chợ phi" is incorrect or missing context).**
+
+*   **Clearer Prompt (requires more information):** "Compare and contrast the atmosphere and offerings of a Vietnamese "chợ phiên" (periodic market) with [another type of market, e.g., a modern supermarket, a tourist market, etc.].  Replace "[another type of market]" with the intended comparison."
+
+**Explanation of Terms:**
+
+*   **Chợ phiên:** A periodic market, often held in rural areas of Vietnam, that occurs on specific days of the week or month. They are known for their traditional goods, vibrant atmosphere, and social interactions.
+*   **Dịu:**  Can mean gentle, soft, calm, or soothing.
+*   **Diu (with an acute accent):** A carrying pole used to balance baskets or goods on either end.
+*   **Chợ phi:** This term is not standard Vietnamese and likely contains a mistake or is used in a very specific regional context.
+
+**To provide the best rewrite, please clarify the intended meaning of "dịu chợ phiên chợ phi."**  What were you trying to ask?
+2025-04-27 14:19:25,198 - app.db - INFO - Getting chat history.
+2025-04-27 14:19:25,199 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:19:25,203 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 14:19:25,204 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: The prompt "dịu chợ phiên chợ phi" is unclear and likely contains errors. It seems to be attempting to reference Vietnamese market terms, but the words are either misspelled or used in an uncommon way.
+
+Here are a few possible interpretations and corresponding rewrites, depending on the intended meaning:
+
+**Interpretation 1: Referring to a "diu" (carrying pole) used in traditional markets (chợ phiên).**
+
+*   **Clearer Prompt:** Describe the use of a "diu" (carrying pole) in traditional Vietnamese "chợ phiên" (periodic markets).
+
+**Interpretation 2: Referring to the experience of calming down after the hustle and bustle of a traditional market (chợ phiên).**
+
+*   **Clearer Prompt:** Describe the feeling of calmness ("diu") after leaving a busy Vietnamese "chợ phiên" (periodic market).
+
+**Interpretation 3: "Chợ phiên" contrasted with something else (perhaps another type of market, but the term "chợ phi" is incorrect or missing context).**
+
+*   **Clearer Prompt (requires more information):** "Compare and contrast the atmosphere and offerings of a Vietnamese "chợ phiên" (periodic market) with [another type of market, e.g., a modern supermarket, a tourist market, etc.].  Replace "[another type of market]" with the intended comparison."
+
+**Explanation of Terms:**
+
+*   **Chợ phiên:** A periodic market, often held in rural areas of Vietnam, that occurs on specific days of the week or month. They are known for their traditional goods, vibrant atmosphere, and social interactions.
+*   **Dịu:**  Can mean gentle, soft, calm, or soothing.
+*   **Diu (with an acute accent):** A carrying pole used to balance baskets or goods on either end.
+*   **Chợ phi:** This term is not standard Vietnamese and likely contains a mistake or is used in a very specific regional context.
+
+**To provide the best rewrite, please clarify the intended meaning of "dịu chợ phiên chợ phi."**  What were you trying to ask?
+2025-04-27 14:19:25,204 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 14:19:25,744 - app.intent_detector - INFO - Detected intent: cảm ơn for input: The prompt "dịu chợ phiên chợ phi" is unclear and likely contains errors. It seems to be attempting to reference Vietnamese market terms, but the words are either misspelled or used in an uncommon way.
+
+Here are a few possible interpretations and corresponding rewrites, depending on the intended meaning:
+
+**Interpretation 1: Referring to a "diu" (carrying pole) used in traditional markets (chợ phiên).**
+
+*   **Clearer Prompt:** Describe the use of a "diu" (carrying pole) in traditional Vietnamese "chợ phiên" (periodic markets).
+
+**Interpretation 2: Referring to the experience of calming down after the hustle and bustle of a traditional market (chợ phiên).**
+
+*   **Clearer Prompt:** Describe the feeling of calmness ("diu") after leaving a busy Vietnamese "chợ phiên" (periodic market).
+
+**Interpretation 3: "Chợ phiên" contrasted with something else (perhaps another type of market, but the term "chợ phi" is incorrect or missing context).**
+
+*   **Clearer Prompt (requires more information):** "Compare and contrast the atmosphere and offerings of a Vietnamese "chợ phiên" (periodic market) with [another type of market, e.g., a modern supermarket, a tourist market, etc.].  Replace "[another type of market]" with the intended comparison."
+
+**Explanation of Terms:**
+
+*   **Chợ phiên:** A periodic market, often held in rural areas of Vietnam, that occurs on specific days of the week or month. They are known for their traditional goods, vibrant atmosphere, and social interactions.
+*   **Dịu:**  Can mean gentle, soft, calm, or soothing.
+*   **Diu (with an acute accent):** A carrying pole used to balance baskets or goods on either end.
+*   **Chợ phi:** This term is not standard Vietnamese and likely contains a mistake or is used in a very specific regional context.
+
+**To provide the best rewrite, please clarify the intended meaning of "dịu chợ phiên chợ phi."**  What were you trying to ask?
+2025-04-27 14:19:25,744 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 14:19:25,744 - app.langchain - INFO - Detected intent: cảm ơn | Requires context: False
+2025-04-27 14:19:25,745 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 14:19:26,975 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 14:19:26,975 - app.db - INFO - Inserting application logs.
+2025-04-27 14:19:26,977 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 14:19:26,980 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 14:19:26,981 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Chào bạn! Câu hỏi của bạn hiện tại hơi khó hiểu một chút. Bạn có thể làm rõ hơn về ý định của mình khi hỏi về "dịu chợ phiên chợ phi" được không? Ví dụ, bạn muốn biết về điều gì liên quan đến trang điểm, chăm sóc da, hay một chủ đề nào khác mà tôi có thể giúp bạn? Khi bạn cung cấp thêm thông tin, tôi sẽ cố gắng hết sức để hỗ trợ bạn.
+2025-04-27 15:07:36,275 - app.audio_controller - INFO - Speech: sớm mua một chút tốt và thật sự.
+2025-04-27 15:07:36,286 - app.chat_controller - INFO - User Query: sớm mua một chút tốt và thật sự.
+2025-04-27 15:07:36,287 - app.langchain - INFO - Using gemini-2.0-flash to rewrite prompt
+2025-04-27 15:07:36,287 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:07:36,289 - app.langchain - INFO - Prompt for rewritin: Please rewrite this prompt to make it clearer and more accurate: sớm mua một chút tốt và thật sự.
+2025-04-27 15:07:40,418 - app.langchain - INFO - Rewritten prompt: content='Here are a few ways to rewrite the prompt "sớm mua một chút tốt và thật sự," depending on the intended meaning:\n\n**Option 1 (Focus on buying something of good quality and genuine):**\n\n* **"Mua sớm một món đồ tốt và chất lượng thật."** (Buy a good and truly quality item soon.)\n* **"Nên mua sớm một thứ gì đó tốt và chính hãng/thật."** (You should buy something good and genuine soon.)\n\n**Option 2 (Focus on buying something that is both good and authentic, and doing it soon):**\n\n* **"Mua ngay một món hàng tốt và thật đi."** (Buy a good and genuine item right away.)\n* **"Nhanh chóng mua một thứ gì đó vừa tốt vừa thật đi."** (Quickly buy something that is both good and genuine.)\n\n**Option 3 (Focus on the importance of the item being both good and genuine, and the urgency of buying it):**\n\n* **"Quan trọng là phải mua sớm một món đồ tốt và thật."** (It\'s important to buy a good and genuine item soon.)\n\n**Why these are better:**\n\n* **"Tốt" (good) and "thật" (true/genuine) are vague on their own.**  The rewrites add context:\n    *  "Chất lượng thật" (truly quality) emphasizes the high quality aspect.\n    *  "Chính hãng" (genuine brand) or "thật" (genuine) in the context of a product emphasizes authenticity and not being counterfeit.\n* **"Một chút" (a little) is ambiguous.** It could mean a small quantity or a small amount of money. The rewrites use "món đồ" (item/thing) or "thứ gì đó" (something) to be more specific.\n* **Word order and phrasing are improved for natural Vietnamese.**\n\n**To choose the best option, consider:**\n\n* **What kind of item are you referring to?** (e.g., a product, a service, information?)\n* **What is the reason for the urgency?**\n* **What is the specific concern about the item being "thật"?** (e.g., avoiding fakes, ensuring reliability?)\n\nBy providing more context, I can give you an even more accurate and clear translation.' additional_kwargs={} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'safety_ratings': []} id='run-e9987727-c419-4433-92a6-1c3d4e9e0a5d-0' usage_metadata={'input_tokens': 21, 'output_tokens': 493, 'total_tokens': 514, 'input_token_details': {'cache_read': 0}}
+2025-04-27 15:07:40,418 - app.chat_controller - INFO - Rewritten Prompt: Here are a few ways to rewrite the prompt "sớm mua một chút tốt và thật sự," depending on the intended meaning:
+
+**Option 1 (Focus on buying something of good quality and genuine):**
+
+* **"Mua sớm một món đồ tốt và chất lượng thật."** (Buy a good and truly quality item soon.)
+* **"Nên mua sớm một thứ gì đó tốt và chính hãng/thật."** (You should buy something good and genuine soon.)
+
+**Option 2 (Focus on buying something that is both good and authentic, and doing it soon):**
+
+* **"Mua ngay một món hàng tốt và thật đi."** (Buy a good and genuine item right away.)
+* **"Nhanh chóng mua một thứ gì đó vừa tốt vừa thật đi."** (Quickly buy something that is both good and genuine.)
+
+**Option 3 (Focus on the importance of the item being both good and genuine, and the urgency of buying it):**
+
+* **"Quan trọng là phải mua sớm một món đồ tốt và thật."** (It's important to buy a good and genuine item soon.)
+
+**Why these are better:**
+
+* **"Tốt" (good) and "thật" (true/genuine) are vague on their own.**  The rewrites add context:
+    *  "Chất lượng thật" (truly quality) emphasizes the high quality aspect.
+    *  "Chính hãng" (genuine brand) or "thật" (genuine) in the context of a product emphasizes authenticity and not being counterfeit.
+* **"Một chút" (a little) is ambiguous.** It could mean a small quantity or a small amount of money. The rewrites use "món đồ" (item/thing) or "thứ gì đó" (something) to be more specific.
+* **Word order and phrasing are improved for natural Vietnamese.**
+
+**To choose the best option, consider:**
+
+* **What kind of item are you referring to?** (e.g., a product, a service, information?)
+* **What is the reason for the urgency?**
+* **What is the specific concern about the item being "thật"?** (e.g., avoiding fakes, ensuring reliability?)
+
+By providing more context, I can give you an even more accurate and clear translation.
+2025-04-27 15:07:40,418 - app.db - INFO - Getting chat history.
+2025-04-27 15:07:40,420 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:07:40,424 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 15:07:40,424 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: Here are a few ways to rewrite the prompt "sớm mua một chút tốt và thật sự," depending on the intended meaning:
+
+**Option 1 (Focus on buying something of good quality and genuine):**
+
+* **"Mua sớm một món đồ tốt và chất lượng thật."** (Buy a good and truly quality item soon.)
+* **"Nên mua sớm một thứ gì đó tốt và chính hãng/thật."** (You should buy something good and genuine soon.)
+
+**Option 2 (Focus on buying something that is both good and authentic, and doing it soon):**
+
+* **"Mua ngay một món hàng tốt và thật đi."** (Buy a good and genuine item right away.)
+* **"Nhanh chóng mua một thứ gì đó vừa tốt vừa thật đi."** (Quickly buy something that is both good and genuine.)
+
+**Option 3 (Focus on the importance of the item being both good and genuine, and the urgency of buying it):**
+
+* **"Quan trọng là phải mua sớm một món đồ tốt và thật."** (It's important to buy a good and genuine item soon.)
+
+**Why these are better:**
+
+* **"Tốt" (good) and "thật" (true/genuine) are vague on their own.**  The rewrites add context:
+    *  "Chất lượng thật" (truly quality) emphasizes the high quality aspect.
+    *  "Chính hãng" (genuine brand) or "thật" (genuine) in the context of a product emphasizes authenticity and not being counterfeit.
+* **"Một chút" (a little) is ambiguous.** It could mean a small quantity or a small amount of money. The rewrites use "món đồ" (item/thing) or "thứ gì đó" (something) to be more specific.
+* **Word order and phrasing are improved for natural Vietnamese.**
+
+**To choose the best option, consider:**
+
+* **What kind of item are you referring to?** (e.g., a product, a service, information?)
+* **What is the reason for the urgency?**
+* **What is the specific concern about the item being "thật"?** (e.g., avoiding fakes, ensuring reliability?)
+
+By providing more context, I can give you an even more accurate and clear translation.
+2025-04-27 15:07:40,424 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:07:40,998 - app.intent_detector - INFO - Detected intent: cảm ơn for input: Here are a few ways to rewrite the prompt "sớm mua một chút tốt và thật sự," depending on the intended meaning:
+
+**Option 1 (Focus on buying something of good quality and genuine):**
+
+* **"Mua sớm một món đồ tốt và chất lượng thật."** (Buy a good and truly quality item soon.)
+* **"Nên mua sớm một thứ gì đó tốt và chính hãng/thật."** (You should buy something good and genuine soon.)
+
+**Option 2 (Focus on buying something that is both good and authentic, and doing it soon):**
+
+* **"Mua ngay một món hàng tốt và thật đi."** (Buy a good and genuine item right away.)
+* **"Nhanh chóng mua một thứ gì đó vừa tốt vừa thật đi."** (Quickly buy something that is both good and genuine.)
+
+**Option 3 (Focus on the importance of the item being both good and genuine, and the urgency of buying it):**
+
+* **"Quan trọng là phải mua sớm một món đồ tốt và thật."** (It's important to buy a good and genuine item soon.)
+
+**Why these are better:**
+
+* **"Tốt" (good) and "thật" (true/genuine) are vague on their own.**  The rewrites add context:
+    *  "Chất lượng thật" (truly quality) emphasizes the high quality aspect.
+    *  "Chính hãng" (genuine brand) or "thật" (genuine) in the context of a product emphasizes authenticity and not being counterfeit.
+* **"Một chút" (a little) is ambiguous.** It could mean a small quantity or a small amount of money. The rewrites use "món đồ" (item/thing) or "thứ gì đó" (something) to be more specific.
+* **Word order and phrasing are improved for natural Vietnamese.**
+
+**To choose the best option, consider:**
+
+* **What kind of item are you referring to?** (e.g., a product, a service, information?)
+* **What is the reason for the urgency?**
+* **What is the specific concern about the item being "thật"?** (e.g., avoiding fakes, ensuring reliability?)
+
+By providing more context, I can give you an even more accurate and clear translation.
+2025-04-27 15:07:40,998 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 15:07:40,998 - app.langchain - INFO - Detected intent: cảm ơn | Requires context: False
+2025-04-27 15:07:40,998 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 15:07:43,425 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 15:07:43,425 - app.db - INFO - Inserting application logs.
+2025-04-27 15:07:43,427 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:07:43,430 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 15:07:43,431 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Chào bạn! Để có thể giúp bạn tốt nhất về các chủ đề trang điểm hoặc chăm sóc da, bạn có thể vui lòng cho tôi biết bạn đang quan tâm đến điều gì cụ thể được không? Ví dụ:
+
+*   Bạn muốn tìm hiểu về loại sản phẩm nào? (Ví dụ: kem chống nắng, son môi, kem dưỡng ẩm...)
+*   Bạn có loại da nào? (Ví dụ: da dầu, da khô, da hỗn hợp...)
+*   Bạn đang gặp vấn đề về da nào không? (Ví dụ: mụn, nám, tàn nhang...)
+*   Bạn muốn được tư vấn về quy trình chăm sóc da nào? (Ví dụ: quy trình dưỡng da hàng ngày, quy trình trị mụn...)
+
+Khi bạn cung cấp thêm thông tin, tôi sẽ có thể đưa ra những lời khuyên và gợi ý phù hợp nhất với bạn. Rất mong nhận được phản hồi từ bạn!
+2025-04-27 15:11:00,286 - app.audio_controller - INFO - Speech: ừ chú cho.
+2025-04-27 15:11:00,294 - app.chat_controller - INFO - User Query: ừ chú cho.
+2025-04-27 15:11:00,294 - app.langchain - INFO - Using gemini-2.0-flash to rewrite prompt
+2025-04-27 15:11:00,294 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:11:00,296 - app.langchain - INFO - Prompt for rewritin: Please rewrite this prompt to make it clearer and more accurate: ừ chú cho.
+2025-04-27 15:11:05,244 - app.langchain - INFO - Rewritten prompt: content='The phrase "ừ chú cho" is Vietnamese. To rewrite this prompt to be clearer and more accurate, we need to know the intended context. Here are a few possibilities and clarifications:\n\n**Understanding the Original Phrase:**\n\n*   "Ừ" (ừm) - can mean "yes," "okay," "uh-huh," or an affirmation.\n*   "Chú" - means "uncle" (addressing a male older than oneself, but younger than one\'s parents). It\'s a common polite term of address.\n*   "Cho" - means "to give."\n\nTherefore, "ừ chú cho" generally translates to something like:\n\n*   "Okay, uncle will give [it/something]"\n*   "Yes, uncle is giving [it/something]"\n*   "Uh-huh, uncle gives [it/something]"\n\n**Possible Rewrites Based on Context:**\n\nHere are several ways to rewrite the prompt, depending on what you\'re trying to achieve:\n\n**1. If you want to *understand* the meaning of the phrase:**\n\n*   **Clearer Prompt:** "What does the Vietnamese phrase \'ừ chú cho\' mean in English?"\n*   **More Accurate Prompt:** "Translate the Vietnamese phrase \'ừ chú cho\' into English, considering the context of a younger person speaking to an older male relative (an uncle or someone of that age)."\n\n**2. If you want to *generate text* using the phrase:**\n\n*   **Clearer Prompt:** "Write a short scene where a child is asking their uncle for something, and the uncle responds with \'ừ chú cho\'."\n*   **More Accurate Prompt:** "Create a dialogue between a child and their uncle in Vietnamese. The child asks for a small favor or item. The uncle responds positively and agrees to give it to them, using the phrase \'ừ chú cho\'."\n\n**3. If you want to *analyze* the phrase:**\n\n*   **Clearer Prompt:** "Analyze the grammatical structure and cultural implications of the Vietnamese phrase \'ừ chú cho\'."\n*   **More Accurate Prompt:** "Discuss the politeness and familiarity conveyed by the use of \'chú\' and \'cho\' in the phrase \'ừ chú cho\'. How does this phrase reflect Vietnamese cultural norms regarding age and respect?"\n\n**4. If you want to *correct* the phrase (assuming it\'s incorrect):**\n\n*   **Clearer Prompt:** "Is the Vietnamese phrase \'ừ chú cho\' grammatically correct? If not, what is a more appropriate alternative?"\n*   **More Accurate Prompt:** "Assuming a child is speaking to their uncle and the uncle is agreeing to give them something, is the phrase \'ừ chú cho\' the most natural and grammatically correct way to express that in Vietnamese? If not, suggest alternatives."\n\n**In short, to give you the *best* rewrite, I need to know what you intend to *do* with the phrase.  Please provide more context!**' additional_kwargs={} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'safety_ratings': []} id='run-2716182b-6c9c-4ce8-a7d9-87b3d4b50bc3-0' usage_metadata={'input_tokens': 17, 'output_tokens': 624, 'total_tokens': 641, 'input_token_details': {'cache_read': 0}}
+2025-04-27 15:11:05,244 - app.chat_controller - INFO - Rewritten Prompt: The phrase "ừ chú cho" is Vietnamese. To rewrite this prompt to be clearer and more accurate, we need to know the intended context. Here are a few possibilities and clarifications:
+
+**Understanding the Original Phrase:**
+
+*   "Ừ" (ừm) - can mean "yes," "okay," "uh-huh," or an affirmation.
+*   "Chú" - means "uncle" (addressing a male older than oneself, but younger than one's parents). It's a common polite term of address.
+*   "Cho" - means "to give."
+
+Therefore, "ừ chú cho" generally translates to something like:
+
+*   "Okay, uncle will give [it/something]"
+*   "Yes, uncle is giving [it/something]"
+*   "Uh-huh, uncle gives [it/something]"
+
+**Possible Rewrites Based on Context:**
+
+Here are several ways to rewrite the prompt, depending on what you're trying to achieve:
+
+**1. If you want to *understand* the meaning of the phrase:**
+
+*   **Clearer Prompt:** "What does the Vietnamese phrase 'ừ chú cho' mean in English?"
+*   **More Accurate Prompt:** "Translate the Vietnamese phrase 'ừ chú cho' into English, considering the context of a younger person speaking to an older male relative (an uncle or someone of that age)."
+
+**2. If you want to *generate text* using the phrase:**
+
+*   **Clearer Prompt:** "Write a short scene where a child is asking their uncle for something, and the uncle responds with 'ừ chú cho'."
+*   **More Accurate Prompt:** "Create a dialogue between a child and their uncle in Vietnamese. The child asks for a small favor or item. The uncle responds positively and agrees to give it to them, using the phrase 'ừ chú cho'."
+
+**3. If you want to *analyze* the phrase:**
+
+*   **Clearer Prompt:** "Analyze the grammatical structure and cultural implications of the Vietnamese phrase 'ừ chú cho'."
+*   **More Accurate Prompt:** "Discuss the politeness and familiarity conveyed by the use of 'chú' and 'cho' in the phrase 'ừ chú cho'. How does this phrase reflect Vietnamese cultural norms regarding age and respect?"
+
+**4. If you want to *correct* the phrase (assuming it's incorrect):**
+
+*   **Clearer Prompt:** "Is the Vietnamese phrase 'ừ chú cho' grammatically correct? If not, what is a more appropriate alternative?"
+*   **More Accurate Prompt:** "Assuming a child is speaking to their uncle and the uncle is agreeing to give them something, is the phrase 'ừ chú cho' the most natural and grammatically correct way to express that in Vietnamese? If not, suggest alternatives."
+
+**In short, to give you the *best* rewrite, I need to know what you intend to *do* with the phrase.  Please provide more context!**
+2025-04-27 15:11:05,244 - app.db - INFO - Getting chat history.
+2025-04-27 15:11:05,246 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:11:05,253 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 15:11:05,253 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: The phrase "ừ chú cho" is Vietnamese. To rewrite this prompt to be clearer and more accurate, we need to know the intended context. Here are a few possibilities and clarifications:
+
+**Understanding the Original Phrase:**
+
+*   "Ừ" (ừm) - can mean "yes," "okay," "uh-huh," or an affirmation.
+*   "Chú" - means "uncle" (addressing a male older than oneself, but younger than one's parents). It's a common polite term of address.
+*   "Cho" - means "to give."
+
+Therefore, "ừ chú cho" generally translates to something like:
+
+*   "Okay, uncle will give [it/something]"
+*   "Yes, uncle is giving [it/something]"
+*   "Uh-huh, uncle gives [it/something]"
+
+**Possible Rewrites Based on Context:**
+
+Here are several ways to rewrite the prompt, depending on what you're trying to achieve:
+
+**1. If you want to *understand* the meaning of the phrase:**
+
+*   **Clearer Prompt:** "What does the Vietnamese phrase 'ừ chú cho' mean in English?"
+*   **More Accurate Prompt:** "Translate the Vietnamese phrase 'ừ chú cho' into English, considering the context of a younger person speaking to an older male relative (an uncle or someone of that age)."
+
+**2. If you want to *generate text* using the phrase:**
+
+*   **Clearer Prompt:** "Write a short scene where a child is asking their uncle for something, and the uncle responds with 'ừ chú cho'."
+*   **More Accurate Prompt:** "Create a dialogue between a child and their uncle in Vietnamese. The child asks for a small favor or item. The uncle responds positively and agrees to give it to them, using the phrase 'ừ chú cho'."
+
+**3. If you want to *analyze* the phrase:**
+
+*   **Clearer Prompt:** "Analyze the grammatical structure and cultural implications of the Vietnamese phrase 'ừ chú cho'."
+*   **More Accurate Prompt:** "Discuss the politeness and familiarity conveyed by the use of 'chú' and 'cho' in the phrase 'ừ chú cho'. How does this phrase reflect Vietnamese cultural norms regarding age and respect?"
+
+**4. If you want to *correct* the phrase (assuming it's incorrect):**
+
+*   **Clearer Prompt:** "Is the Vietnamese phrase 'ừ chú cho' grammatically correct? If not, what is a more appropriate alternative?"
+*   **More Accurate Prompt:** "Assuming a child is speaking to their uncle and the uncle is agreeing to give them something, is the phrase 'ừ chú cho' the most natural and grammatically correct way to express that in Vietnamese? If not, suggest alternatives."
+
+**In short, to give you the *best* rewrite, I need to know what you intend to *do* with the phrase.  Please provide more context!**
+2025-04-27 15:11:05,253 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:11:05,796 - app.intent_detector - INFO - Detected intent: cảm ơn for input: The phrase "ừ chú cho" is Vietnamese. To rewrite this prompt to be clearer and more accurate, we need to know the intended context. Here are a few possibilities and clarifications:
+
+**Understanding the Original Phrase:**
+
+*   "Ừ" (ừm) - can mean "yes," "okay," "uh-huh," or an affirmation.
+*   "Chú" - means "uncle" (addressing a male older than oneself, but younger than one's parents). It's a common polite term of address.
+*   "Cho" - means "to give."
+
+Therefore, "ừ chú cho" generally translates to something like:
+
+*   "Okay, uncle will give [it/something]"
+*   "Yes, uncle is giving [it/something]"
+*   "Uh-huh, uncle gives [it/something]"
+
+**Possible Rewrites Based on Context:**
+
+Here are several ways to rewrite the prompt, depending on what you're trying to achieve:
+
+**1. If you want to *understand* the meaning of the phrase:**
+
+*   **Clearer Prompt:** "What does the Vietnamese phrase 'ừ chú cho' mean in English?"
+*   **More Accurate Prompt:** "Translate the Vietnamese phrase 'ừ chú cho' into English, considering the context of a younger person speaking to an older male relative (an uncle or someone of that age)."
+
+**2. If you want to *generate text* using the phrase:**
+
+*   **Clearer Prompt:** "Write a short scene where a child is asking their uncle for something, and the uncle responds with 'ừ chú cho'."
+*   **More Accurate Prompt:** "Create a dialogue between a child and their uncle in Vietnamese. The child asks for a small favor or item. The uncle responds positively and agrees to give it to them, using the phrase 'ừ chú cho'."
+
+**3. If you want to *analyze* the phrase:**
+
+*   **Clearer Prompt:** "Analyze the grammatical structure and cultural implications of the Vietnamese phrase 'ừ chú cho'."
+*   **More Accurate Prompt:** "Discuss the politeness and familiarity conveyed by the use of 'chú' and 'cho' in the phrase 'ừ chú cho'. How does this phrase reflect Vietnamese cultural norms regarding age and respect?"
+
+**4. If you want to *correct* the phrase (assuming it's incorrect):**
+
+*   **Clearer Prompt:** "Is the Vietnamese phrase 'ừ chú cho' grammatically correct? If not, what is a more appropriate alternative?"
+*   **More Accurate Prompt:** "Assuming a child is speaking to their uncle and the uncle is agreeing to give them something, is the phrase 'ừ chú cho' the most natural and grammatically correct way to express that in Vietnamese? If not, suggest alternatives."
+
+**In short, to give you the *best* rewrite, I need to know what you intend to *do* with the phrase.  Please provide more context!**
+2025-04-27 15:11:05,796 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 15:11:05,796 - app.langchain - INFO - Detected intent: cảm ơn | Requires context: False
+2025-04-27 15:11:05,796 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 15:11:07,147 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 15:11:07,147 - app.db - INFO - Inserting application logs.
+2025-04-27 15:11:07,148 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:11:07,150 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 15:11:07,151 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Chào bạn! Câu hỏi của bạn rất thú vị. Để tôi có thể giúp bạn tốt nhất về các chủ đề trang điểm hoặc chăm sóc da, bạn có thể cho tôi biết cụ thể hơn bạn muốn hỏi về vấn đề gì không? Ví dụ như:
+
+*   Bạn muốn biết về một sản phẩm cụ thể nào đó?
+*   Bạn muốn tìm hiểu về một quy trình chăm sóc da cụ thể?
+*   Hay bạn có một vấn đề về da cần được tư vấn?
+
+Càng nhiều thông tin, tôi càng có thể đưa ra câu trả lời chính xác và hữu ích cho bạn. Rất mong nhận được phản hồi từ bạn!
+2025-04-27 15:17:30,949 - app.chat_controller - INFO - User Query: thế thì dạo.
+2025-04-27 15:17:30,949 - app.langchain - INFO - Using gemini-2.0-flash to rewrite prompt
+2025-04-27 15:17:30,949 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:17:30,953 - app.langchain - INFO - Prompt for rewritin: System: 
+Bạn là một chuyên gia phân tích ngôn ngữ và diễn giải ý định người dùng. Nhiệm vụ của bạn là nhận một câu đầu vào có thể chứa lỗi do thu âm không rõ ràng hoặc phát âm sai, và chuyển đổi nó thành một câu prompt rõ ràng và chính xác nhất có thể, phản ánh đúng ý định mà người dùng muốn truyền đạt.
+
+Hãy xem xét kỹ lưỡng ngữ cảnh có thể có, các cụm từ tương tự phổ biến, và kiến thức ngôn ngữ tổng quát để đưa ra một prompt đã được "chuẩn hóa".
+
+Ví dụ:
+- Đầu vào: "Hôm bún tôi không hiểu"
+- Đầu ra (Prompt được chuẩn hóa): "Hôm đó tôi không hiểu."
+
+Bây giờ, hãy áp dụng quy trình này cho câu đầu vào tiếp theo mà người dùng cung cấp. Bạn sẽ chỉ đưa ra câu prompt đã được chuẩn hóa làm đầu ra cuối cùng.
+. User: thế thì dạo.
+2025-04-27 15:17:32,391 - app.langchain - INFO - Rewritten prompt: content='Vậy thì sao?' additional_kwargs={} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'safety_ratings': []} id='run-25e277ae-dac4-400b-970b-8dadbba8f3f2-0' usage_metadata={'input_tokens': 205, 'output_tokens': 6, 'total_tokens': 211, 'input_token_details': {'cache_read': 0}}
+2025-04-27 15:17:32,391 - app.chat_controller - INFO - Rewritten Prompt: Vậy thì sao?
+2025-04-27 15:17:32,391 - app.db - INFO - Getting chat history.
+2025-04-27 15:17:32,393 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:17:32,397 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 15:17:32,398 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: Vậy thì sao?
+2025-04-27 15:17:32,398 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:17:32,501 - app.intent_detector - INFO - Detected intent: cảm ơn for input: Vậy thì sao?
+2025-04-27 15:17:32,502 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 15:17:32,502 - app.langchain - INFO - Detected intent: cảm ơn | Requires context: False
+2025-04-27 15:17:32,502 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 15:17:34,180 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 15:17:34,180 - app.db - INFO - Inserting application logs.
+2025-04-27 15:17:34,182 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:17:34,186 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 15:17:34,187 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Tôi xin lỗi, tôi không hiểu bạn đang hỏi gì. Bạn có thể vui lòng cho tôi biết bạn muốn biết thêm về điều gì không? Tôi có thể hỗ trợ bạn về các chủ đề trang điểm hoặc chăm sóc da.
+2025-04-27 15:18:06,496 - app.audio_controller - INFO - Speech: cứ thảo vật hả có biết sáng lê bản là ăn gì chứ.
+2025-04-27 15:18:06,511 - app.chat_controller - INFO - User Query: cứ thảo vật hả có biết sáng lê bản là ăn gì chứ.
+2025-04-27 15:18:06,511 - app.langchain - INFO - Using gemini-2.0-flash to rewrite prompt
+2025-04-27 15:18:06,511 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:18:06,512 - app.langchain - INFO - Prompt for rewritin: System: 
+Bạn là một chuyên gia phân tích ngôn ngữ và diễn giải ý định người dùng. Nhiệm vụ của bạn là nhận một câu đầu vào có thể chứa lỗi do thu âm không rõ ràng hoặc phát âm sai, và chuyển đổi nó thành một câu prompt rõ ràng và chính xác nhất có thể, phản ánh đúng ý định mà người dùng muốn truyền đạt.
+
+Hãy xem xét kỹ lưỡng ngữ cảnh có thể có, các cụm từ tương tự phổ biến, và kiến thức ngôn ngữ tổng quát để đưa ra một prompt đã được "chuẩn hóa".
+
+Ví dụ:
+- Đầu vào: "Hôm bún tôi không hiểu"
+- Đầu ra (Prompt được chuẩn hóa): "Hôm đó tôi không hiểu."
+
+Bây giờ, hãy áp dụng quy trình này cho câu đầu vào tiếp theo mà người dùng cung cấp. Bạn sẽ chỉ đưa ra câu prompt đã được chuẩn hóa làm đầu ra cuối cùng.
+. User: cứ thảo vật hả có biết sáng lê bản là ăn gì chứ.
+2025-04-27 15:18:08,000 - app.langchain - INFO - Rewritten prompt: content='Cứ thảo vật hả? Có biết sáng nay Lê Bàn ăn gì không?' additional_kwargs={} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'safety_ratings': []} id='run-b81dea44-4c53-4a3b-975d-13d5c30921c6-0' usage_metadata={'input_tokens': 215, 'output_tokens': 19, 'total_tokens': 234, 'input_token_details': {'cache_read': 0}}
+2025-04-27 15:18:08,000 - app.chat_controller - INFO - Rewritten Prompt: Cứ thảo vật hả? Có biết sáng nay Lê Bàn ăn gì không?
+2025-04-27 15:18:08,000 - app.db - INFO - Getting chat history.
+2025-04-27 15:18:08,001 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:18:08,005 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 15:18:08,006 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: Cứ thảo vật hả? Có biết sáng nay Lê Bàn ăn gì không?
+2025-04-27 15:18:08,006 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:18:08,111 - app.intent_detector - INFO - Detected intent: phản hồi for input: Cứ thảo vật hả? Có biết sáng nay Lê Bàn ăn gì không?
+2025-04-27 15:18:08,111 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 15:18:08,111 - app.langchain - INFO - Detected intent: phản hồi | Requires context: False
+2025-04-27 15:18:08,111 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 15:18:09,463 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 15:18:09,463 - app.db - INFO - Inserting application logs.
+2025-04-27 15:18:09,465 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:18:09,468 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 15:18:09,468 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Chào bạn,
+
+Cảm ơn bạn đã liên hệ với mình! Mình rất vui được hỗ trợ bạn về các chủ đề liên quan đến thảo dược, trang điểm hoặc chăm sóc da. Tuy nhiên, câu hỏi của bạn có vẻ hơi khác so với những gì mình chuyên môn.
+
+Để mình có thể giúp bạn tốt hơn, bạn có thể làm rõ câu hỏi của mình được không? Ví dụ, bạn muốn biết thông tin gì về thảo dược? Hoặc bạn có câu hỏi nào về trang điểm hoặc chăm sóc da không?
+
+Rất mong nhận được phản hồi từ bạn để mình có thể hỗ trợ bạn một cách tốt nhất!
+2025-04-27 15:18:38,887 - app.audio_controller - INFO - Speech: xin chào tôi lần về việt nam.
+2025-04-27 15:18:38,894 - app.chat_controller - INFO - User Query: xin chào tôi lần về việt nam.
+2025-04-27 15:18:38,894 - app.langchain - INFO - Using gemini-2.0-flash to rewrite prompt
+2025-04-27 15:18:38,894 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:18:38,895 - app.langchain - INFO - Prompt for rewritin: System: 
+Bạn là một chuyên gia phân tích ngôn ngữ và diễn giải ý định người dùng. Nhiệm vụ của bạn là nhận một câu đầu vào có thể chứa lỗi do thu âm không rõ ràng hoặc phát âm sai, và chuyển đổi nó thành một câu prompt rõ ràng và chính xác nhất có thể, phản ánh đúng ý định mà người dùng muốn truyền đạt.
+
+Hãy xem xét kỹ lưỡng ngữ cảnh có thể có, các cụm từ tương tự phổ biến, và kiến thức ngôn ngữ tổng quát để đưa ra một prompt đã được "chuẩn hóa".
+
+Ví dụ:
+- Đầu vào: "Hôm bún tôi không hiểu"
+- Đầu ra (Prompt được chuẩn hóa): "Hôm đó tôi không hiểu."
+
+Bây giờ, hãy áp dụng quy trình này cho câu đầu vào tiếp theo mà người dùng cung cấp. Bạn sẽ chỉ đưa ra câu prompt đã được chuẩn hóa làm đầu ra cuối cùng.
+. User: xin chào tôi lần về việt nam.
+2025-04-27 15:18:40,359 - app.langchain - INFO - Rewritten prompt: content='Chào, tôi muốn biết thông tin về lần về Việt Nam.' additional_kwargs={} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'safety_ratings': []} id='run-702337a8-5dce-4764-bc2b-7a0633ba37bf-0' usage_metadata={'input_tokens': 208, 'output_tokens': 15, 'total_tokens': 223, 'input_token_details': {'cache_read': 0}}
+2025-04-27 15:18:40,359 - app.chat_controller - INFO - Rewritten Prompt: Chào, tôi muốn biết thông tin về lần về Việt Nam.
+2025-04-27 15:18:40,359 - app.db - INFO - Getting chat history.
+2025-04-27 15:18:40,361 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:18:40,376 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 15:18:40,376 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: Chào, tôi muốn biết thông tin về lần về Việt Nam.
+2025-04-27 15:18:40,376 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:18:40,465 - app.intent_detector - INFO - Detected intent: phản hồi for input: Chào, tôi muốn biết thông tin về lần về Việt Nam.
+2025-04-27 15:18:40,465 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 15:18:40,465 - app.langchain - INFO - Detected intent: phản hồi | Requires context: False
+2025-04-27 15:18:40,466 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 15:18:42,698 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 15:18:42,699 - app.db - INFO - Inserting application logs.
+2025-04-27 15:18:42,700 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:18:42,703 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 15:18:42,704 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Chào bạn! Để tôi có thể cung cấp thông tin chính xác và hữu ích nhất về các chủ đề trang điểm hoặc chăm sóc da mà bạn quan tâm khi về Việt Nam, bạn có thể cho tôi biết cụ thể hơn bạn muốn biết điều gì không? Ví dụ như:
+
+*   Bạn quan tâm đến sản phẩm trang điểm/chăm sóc da nào của Việt Nam?
+*   Bạn muốn mua sản phẩm ở đâu?
+*   Bạn có muốn biết về các xu hướng trang điểm/chăm sóc da phổ biến ở Việt Nam hiện tại không?
+*   Hay bạn muốn tìm kiếm các spa/thẩm mỹ viện uy tín?
+
+Càng có nhiều thông tin, tôi càng có thể giúp bạn tốt hơn!
+2025-04-27 15:21:47,838 - app.chat_controller - INFO - User Query: ừ chị trung.
+2025-04-27 15:21:47,839 - app.langchain - INFO - Using gemini-2.0-flash to rewrite prompt
+2025-04-27 15:21:47,839 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:21:47,843 - app.langchain - INFO - Prompt for rewritin: System: 
+Bạn là một chuyên gia phân tích ngôn ngữ và diễn giải ý định người dùng. Nhiệm vụ của bạn là nhận một câu đầu vào có thể chứa lỗi do thu âm không rõ ràng hoặc phát âm sai, và chuyển đổi nó thành một câu prompt rõ ràng và chính xác nhất có thể, phản ánh đúng ý định mà người dùng muốn truyền đạt.
+
+Hãy xem xét kỹ lưỡng ngữ cảnh có thể có, các cụm từ tương tự phổ biến, và kiến thức ngôn ngữ tổng quát để đưa ra một prompt đã được "chuẩn hóa".
+
+Ví dụ:
+- Đầu vào: "Hôm bún tôi không hiểu"
+- Đầu ra (Prompt được chuẩn hóa): "Hôm đó tôi không hiểu."
+
+Bây giờ, hãy áp dụng quy trình này cho câu đầu vào tiếp theo mà người dùng cung cấp. Bạn sẽ chỉ đưa ra câu prompt đã được chuẩn hóa làm đầu ra cuối cùng.
+. User: ừ chị trung.
+2025-04-27 15:21:49,324 - app.langchain - INFO - Rewritten prompt: content='Ừ, chị chung.' additional_kwargs={} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'safety_ratings': []} id='run-6a376fe1-c8a6-43f5-b664-39140f0ddd49-0' usage_metadata={'input_tokens': 205, 'output_tokens': 6, 'total_tokens': 211, 'input_token_details': {'cache_read': 0}}
+2025-04-27 15:21:49,325 - app.chat_controller - INFO - Rewritten Prompt: Ừ, chị chung.
+2025-04-27 15:21:49,325 - app.db - INFO - Getting chat history.
+2025-04-27 15:21:49,331 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:21:49,335 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 15:21:49,335 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: Ừ, chị chung.
+2025-04-27 15:21:49,335 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:21:49,417 - app.intent_detector - INFO - Detected intent: chào hỏi for input: Ừ, chị chung.
+2025-04-27 15:21:49,418 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 15:21:49,418 - app.langchain - INFO - Detected intent: chào hỏi | Requires context: False
+2025-04-27 15:21:49,418 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 15:21:50,987 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 15:21:50,987 - app.db - INFO - Inserting application logs.
+2025-04-27 15:21:50,988 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:21:50,991 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 15:21:50,992 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Tôi xin lỗi, tôi không hiểu. Bạn có thể vui lòng làm rõ câu hỏi của bạn không? Bạn có thể hỏi về trang điểm hoặc chăm sóc da không?
+2025-04-27 15:22:27,035 - app.audio_controller - INFO - Speech: xin chào tôi là người việt nam xin lỗi tôi không biết.
+2025-04-27 15:22:27,052 - app.chat_controller - INFO - User Query: xin chào tôi là người việt nam xin lỗi tôi không biết.
+2025-04-27 15:22:27,052 - app.langchain - INFO - Using gemini-2.0-flash to rewrite prompt
+2025-04-27 15:22:27,052 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:22:27,071 - app.langchain - INFO - Prompt for rewritin: System: 
+Bạn là một chuyên gia phân tích ngôn ngữ và diễn giải ý định người dùng. Nhiệm vụ của bạn là nhận một câu đầu vào có thể chứa lỗi do thu âm không rõ ràng hoặc phát âm sai, và chuyển đổi nó thành một câu prompt rõ ràng và chính xác nhất có thể, phản ánh đúng ý định mà người dùng muốn truyền đạt.
+
+Hãy xem xét kỹ lưỡng ngữ cảnh có thể có, các cụm từ tương tự phổ biến, và kiến thức ngôn ngữ tổng quát để đưa ra một prompt đã được "chuẩn hóa".
+
+Ví dụ:
+- Đầu vào: "Hôm bún tôi không hiểu"
+- Đầu ra (Prompt được chuẩn hóa): "Hôm đó tôi không hiểu."
+
+Bây giờ, hãy áp dụng quy trình này cho câu đầu vào tiếp theo mà người dùng cung cấp. Bạn sẽ chỉ đưa ra câu prompt đã được chuẩn hóa làm đầu ra cuối cùng.
+. User: xin chào tôi là người việt nam xin lỗi tôi không biết.
+2025-04-27 15:22:28,630 - app.langchain - INFO - Rewritten prompt: content='Xin chào, tôi là người Việt Nam. Xin lỗi, tôi không biết.' additional_kwargs={} response_metadata={'prompt_feedback': {'block_reason': 0, 'safety_ratings': []}, 'finish_reason': 'STOP', 'safety_ratings': []} id='run-b9e329aa-a6fd-4335-8522-22eb58931431-0' usage_metadata={'input_tokens': 213, 'output_tokens': 17, 'total_tokens': 230, 'input_token_details': {'cache_read': 0}}
+2025-04-27 15:22:28,630 - app.chat_controller - INFO - Rewritten Prompt: Xin chào, tôi là người Việt Nam. Xin lỗi, tôi không biết.
+2025-04-27 15:22:28,630 - app.db - INFO - Getting chat history.
+2025-04-27 15:22:28,635 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:22:28,678 - app.db - INFO - Successfully retrieved 10 conversation turns
+2025-04-27 15:22:28,678 - app.langchain - INFO - Creating RAG chain with model: gemini-2.0-flash, user_input: Xin chào, tôi là người Việt Nam. Xin lỗi, tôi không biết.
+2025-04-27 15:22:28,678 - app.langchain - INFO - Using Google Gemini model: gemini-2.0-flash
+2025-04-27 15:22:29,028 - app.intent_detector - INFO - Detected intent: chào hỏi for input: Xin chào, tôi là người Việt Nam. Xin lỗi, tôi không biết.
+2025-04-27 15:22:29,028 - app.langchain - INFO - Selected fallback prompt
+2025-04-27 15:22:29,028 - app.langchain - INFO - Detected intent: chào hỏi | Requires context: False
+2025-04-27 15:22:29,028 - app.langchain - INFO - Successfully created chain with model: gemini-2.0-flash
+2025-04-27 15:22:30,638 - app.chat_controller - INFO - Successfully invoked rag_chain
+2025-04-27 15:22:30,638 - app.db - INFO - Inserting application logs.
+2025-04-27 15:22:30,640 - app.db - INFO - Succesfully connected to MongoDB.
+2025-04-27 15:22:30,664 - app.db - INFO - Successfully inserted application logs.
+2025-04-27 15:22:30,665 - app.chat_controller - INFO - Session ID: frontend-simple-session, AI response: Chào bạn! Không sao cả, tôi rất vui được hỗ trợ bạn. Bạn có câu hỏi nào về trang điểm hoặc chăm sóc da không? Nếu bạn có thể cho tôi biết bạn muốn hỏi về điều gì cụ thể hơn, tôi sẽ cố gắng giúp bạn hết mình. Ví dụ, bạn có thể hỏi về:
+
+*   **Loại da của bạn:** Da dầu, da khô, da hỗn hợp, da nhạy cảm?
+*   **Vấn đề da bạn quan tâm:** Mụn, nám, tàn nhang, lão hóa?
+*   **Sản phẩm bạn muốn tìm hiểu:** Kem chống nắng, serum, kem dưỡng ẩm, v.v.?
+*   **Kỹ thuật trang điểm bạn muốn học:** Trang điểm mắt, trang điểm nền, v.v.?
+
+Càng có nhiều thông tin, tôi càng có thể đưa ra lời khuyên hữu ích hơn.

@@ -37,6 +37,7 @@ class QueryResponse(BaseModel):
     response: str
     session_id: str
     model: GenerationModelName
+    rewritten_question: str
 
 class Document(BaseModel):
     id: int
