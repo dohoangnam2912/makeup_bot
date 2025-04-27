@@ -82,11 +82,11 @@ def initialize_embedding_function(model_name: str = None):
         )
     
     # Wrap with Redis caching if available
-    # if USE_REDIS_CACHE:
-    #     logger.info("Using Redis cache for embeddings")
-    #     return get_redis_cached_embeddings(base_embeddings)
-    # else:
-    return base_embeddings
+    if USE_REDIS_CACHE:
+        logger.info("Using Redis cache for embeddings")
+        return get_redis_cached_embeddings(base_embeddings)
+    else:
+        return base_embeddings
 
 
 def initialize_qdrant_client():

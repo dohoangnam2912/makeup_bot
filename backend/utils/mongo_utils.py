@@ -200,7 +200,7 @@ def get_all_documents():
             documents.append(doc)
         
         client.close()
-        logger.error(f"Successfully retrieved documents: {e}")
+        logger.info(f"Successfully retrieved documents: {e}")
         return documents
     except Exception as e:
         logger.error(f"Failed to retrieve documents: {e}")

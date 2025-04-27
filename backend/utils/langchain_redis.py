@@ -1,7 +1,3 @@
-"""
-Redis integration with LangChain utilities.
-"""
-
 import logging
 import pickle
 from typing import Dict, List, Optional, Any
@@ -17,7 +13,7 @@ from .redis_utils import redis_cache, redis_client, llm_rate_limiter, embedding_
 
 # Configure logging
 logger = logging.getLogger("app.langchain_redis")
-
+logger.setLevel(logging.DEBUG)  # Set to DEBUG to capture detailed logs
 
 class RedisEmbeddingsWrapper(Embeddings):
     """
@@ -56,9 +52,11 @@ class RedisEmbeddingsWrapper(Embeddings):
             
             if cached_result:
                 # Cache hit
+                logger.debug(f"Cache hit for key: {cache_key}")
                 results.append(pickle.loads(cached_result))
             else:
                 # Cache miss
+                logger.debug(f"Cache miss for key: {cache_key}")
                 uncached_texts.append(text)
                 uncached_indices.append(i)
         
@@ -66,7 +64,7 @@ class RedisEmbeddingsWrapper(Embeddings):
         if uncached_texts and not embedding_rate_limiter.is_allowed("system"):
             logger.warning("Rate limit exceeded for embedding documents")
             raise Exception("Rate limit exceeded for embedding operations")
-            
+        
         # Get embeddings for uncached texts
         if uncached_texts:
             uncached_embeddings = self.base_embeddings.embed_documents(uncached_texts)
@@ -75,6 +73,7 @@ class RedisEmbeddingsWrapper(Embeddings):
             for i, embedding in zip(uncached_indices, uncached_embeddings):
                 cache_key = f"chatbot:embed_doc:{hash(texts[i])}"
                 redis_client.setex(cache_key, self.cache_ttl, pickle.dumps(embedding))
+                logger.debug(f"Set cache for key: {cache_key}")
                 results.insert(i, embedding)
         
         return results
@@ -94,16 +93,18 @@ class RedisEmbeddingsWrapper(Embeddings):
         
         if cached_result:
             # Cache hit
+            logger.debug(f"Cache hit for query key: {cache_key}")
             return pickle.loads(cached_result)
         
         # Check rate limit
         if not embedding_rate_limiter.is_allowed("system"):
             logger.warning("Rate limit exceeded for embedding query")
             raise Exception("Rate limit exceeded for embedding operations")
-            
+        
         # Cache miss
         embedding = self.base_embeddings.embed_query(text)
         redis_client.setex(cache_key, self.cache_ttl, pickle.dumps(embedding))
+        logger.debug(f"Set cache for query key: {cache_key}")
         
         return embedding
 
@@ -139,6 +140,7 @@ class RedisLLMWrapper:
             logger.warning("Rate limit exceeded for LLM generation")
             raise Exception("Rate limit exceeded for LLM operations")
         
+        logger.debug(f"Generating response for prompt: {prompt[:50]}...")  # Log a short snippet of the prompt
         # Generate response
         return self.base_llm.predict(prompt, **kwargs)
 
@@ -158,6 +160,7 @@ def get_cached_retriever(retriever: BaseRetriever, cache_ttl: int = 3600) -> Bas
     
     @redis_cache(ttl=cache_ttl, prefix="chatbot:retriever")
     def cached_get_relevant_documents(query: str) -> List[Document]:
+        logger.debug(f"Retrieving documents for query: {query[:50]}...")  # Log a short snippet of the query
         return original_get_relevant_documents(query)
     
     retriever._get_relevant_documents = cached_get_relevant_documents
@@ -168,9 +171,11 @@ def get_cached_retriever(retriever: BaseRetriever, cache_ttl: int = 3600) -> Bas
 # Function to initialize Redis-cached components
 def get_redis_cached_embeddings(base_embeddings: Embeddings) -> RedisEmbeddingsWrapper:
     """Get Redis-cached embeddings."""
+    logger.debug("Initializing Redis-cached embeddings.")
     return RedisEmbeddingsWrapper(base_embeddings)
 
 
 def get_redis_cached_llm(base_llm: BaseLanguageModel) -> RedisLLMWrapper:
     """Get Redis-cached LLM."""
+    logger.debug("Initializing Redis-cached LLM.")
     return RedisLLMWrapper(base_llm)

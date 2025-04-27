@@ -19,6 +19,10 @@ class QueryRewritingModel(str, Enum):
     # API models
     GEMINI_2_FLASH = "gemini-2.0-flash"
 
+class IntentClassificationModel(str, Enum):
+    # Huggingface models
+    BERT_BASE_FINETUNED = "/home/yosakoi/Work/chatbot/models/LLM/intent_classification"
+
 class EmbeddingModelName(str, Enum):
     TEXT_EMBEDDING_004 = "models/text-embedding-004"
     VIETNAMSE_EMBEDDING = "dangvantuan/vietnamese-embedding"

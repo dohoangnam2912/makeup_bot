@@ -21,28 +21,33 @@ def handle_chat(query_input: QueryInput) -> QueryResponse:
     """
     session_id = query_input.session_id or str(uuid.uuid4())
     logger.info(
-        f"Session ID: {session_id}, User Query: {query_input.question}, "
-        f"Model: {query_input.model}"
+        f"User Query: {query_input.question}, "
+
     )
     
     chat_history = get_chat_history(session_id)
-    logger.info(f"Chat history: {chat_history}")
-    rag_chain = get_rag_chain(query_input.model.value)
+    rag_chain = get_rag_chain(query_input.model.value, query_input.question)
     response = rag_chain.invoke({
         "input": query_input.question,
         "chat_history": chat_history
     })
+
+    if isinstance(response, dict):
+        answer_text = response.get("answer") or response.get("text") or ""
+    else:
+        answer_text = response
+
     logger.info("Sucessfully invoke rag_chain")
     insert_application_logs(
         session_id, 
         query_input.question, 
-        response["answer"], 
+        answer_text, 
         query_input.model
     )
     logger.info(f"Session ID: {session_id}, AI response: {response}")
     
     return QueryResponse(
-        response=response["answer"],
+        response=answer_text,
         session_id=session_id,
         model=query_input.model
     )

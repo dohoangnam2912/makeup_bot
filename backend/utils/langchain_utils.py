@@ -5,24 +5,78 @@ for both Gemini API and self-hosted Hugging Face models, with Redis caching.
 
 import logging
 import os
-from typing import Optional
+from typing import Optional, Tuple
 
-from langchain.chains import create_history_aware_retriever, create_retrieval_chain
+from langchain.chains import create_history_aware_retriever, create_retrieval_chain, LLMChain
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_huggingface import HuggingFacePipeline
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
 from models.entities import GenerationModelName
-from prompt import contextualize_q_system_prompt, qa_system_prompt
 from .qdrant_utils import retriever, vectorstore
 from .redis_utils import test_redis_connection
 from .langchain_redis import get_redis_cached_llm, get_cached_retriever
+from .intent_detector import IntentDetector
+from prompt import (
+    contextualize_q_system_prompt,
+    qa_system_prompt,
+    greeting_system_prompt,
+    thank_you_system_prompt,
+    smalltalk_system_prompt,
+    feedback_system_prompt,
+    fallback_system_prompt
+)
 
 # Configure logging
 logger = logging.getLogger("app.langchain")
+
+# Intent detector
+intent_detector = IntentDetector()
+
+def select_prompt_by_intent(intent: str) -> Tuple[ChatPromptTemplate, bool]:
+    """
+    Select the appropriate prompt template based on detected intent.
+    Returns (prompt_template, requires_context)
+    """
+    if intent == "greeting":
+        logger.info("Selected greeting prompt")
+        return ChatPromptTemplate.from_messages([
+            ("system", greeting_system_prompt),
+            ("human", "{input}")
+        ]), False
+    elif intent == "thank_you":
+        logger.info("Selected thank you prompt")
+        return ChatPromptTemplate.from_messages([
+            ("system", thank_you_system_prompt),
+            ("human", "{input}")
+        ]), False
+    elif intent == "smalltalk":
+        logger.info("Selected small talk prompt")
+        return ChatPromptTemplate.from_messages([
+            ("system", smalltalk_system_prompt),
+            ("human", "{input}")
+        ]), False
+    elif intent == "technical_question":
+        logger.info("Selected technical QA prompt")
+        return ChatPromptTemplate.from_messages([
+            ("system", qa_system_prompt),
+            ("system", "Context: {context}"),
+            ("human", "{input}")
+        ]), True
+    elif intent == "feedback":
+        logger.info("Selected feedback prompt")
+        return ChatPromptTemplate.from_messages([
+            ("system", feedback_system_prompt),
+            ("human", "{input}")
+        ]), False
+    else:
+        logger.info("Selected fallback prompt")
+        return ChatPromptTemplate.from_messages([
+            ("system", fallback_system_prompt),
+            ("human", "{input}")
+        ]), False
 
 # Create prompt templates
 contextualize_q_prompt = ChatPromptTemplate.from_messages([
@@ -39,33 +93,24 @@ qa_prompt = ChatPromptTemplate.from_messages([
 ])
 
 logger.info(f"Contextualize prompt: {contextualize_q_prompt} \n QA_prompt: {qa_prompt}")
+
 # Check if Redis is available
 USE_REDIS_CACHE = test_redis_connection()
-
 
 def get_huggingface_llm(model_name_or_path, **kwargs):
     """
     Create a LangChain wrapper for a Hugging Face model.
-    
-    Args:
-        model_name_or_path: Name or path of the model on Hugging Face or local path
-        **kwargs: Additional arguments to pass to the model
-        
-    Returns:
-        HuggingFacePipeline: LangChain compatible model
     """
     logger.info(f"Loading Hugging Face model: {model_name_or_path}")
-    
-    # Load the tokenizer and model
+
     tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
     model = AutoModelForCausalLM.from_pretrained(
-        model_name_or_path, 
+        model_name_or_path,
         torch_dtype="auto",
         device_map="auto",
         **kwargs
     )
-    
-    # Create a text generation pipeline
+
     pipe = pipeline(
         "text-generation",
         model=model,
@@ -75,115 +120,101 @@ def get_huggingface_llm(model_name_or_path, **kwargs):
         top_p=0.95,
         repetition_penalty=1.1
     )
-    
-    # Create a LangChain wrapper
+
     llm = HuggingFacePipeline(pipeline=pipe)
-    
+
     logger.info(f"Hugging Face model {model_name_or_path} loaded successfully")
     return llm
-
 
 def get_llm(model: str):
     """
     Get the appropriate LLM based on the model identifier.
-    
-    Args:
-        model: Model name or path
-        
-    Returns:
-        LLM: A LangChain compatible language model
     """
     if model.startswith("gemini"):
         logger.info(f"Using Google Gemini model: {model}")
         base_llm = ChatGoogleGenerativeAI(model=model)
     else:
-        # For Hugging Face models or local paths
         model_path = os.environ.get("FINETUNED_MODEL_PATH", model)
         base_llm = get_huggingface_llm(model_path)
-    
-    # # Wrap with Redis caching if available 
-    # if USE_REDIS_CACHE:
-    #     logger.info("Using Redis cache for LLM")
-    #     return get_redis_cached_llm(base_llm)
-    # else:
+
     return base_llm
 
-
-def get_rag_chain(model: str = GenerationModelName.GEMINI_2_FLASH):
+def get_rag_chain(model: str = GenerationModelName.GEMINI_2_FLASH, user_input: Optional[str] = None):
     """
-    Create and return a RAG chain using the specified LLM model.
-    
-    Args:
-        model: Model name to use for generation
-        
-    Returns:
-        Chain: A complete RAG chain for question answering
+    Create RAG chain depending on detected intent.
     """
-    logger.info(f"Creating RAG chain with model: {model}")
-    # Initialize the LLM
+    logger.info(f"Creating RAG chain with model: {model}, user_input: {user_input}")
     llm = get_llm(model)
-    # Get retriever with caching if Redis is available
-    cached_retriever = retriever
-    logger.info(f"Cached_retriever: {cached_retriever}")
-    # Create a history-aware retriever that uses chat history for context
-    history_aware_retriever = create_history_aware_retriever(
-        llm, 
-        cached_retriever, 
-        contextualize_q_prompt
-    )
-    
-    # Create a chain to process retrieved documents and generate an answer
-    question_answer_chain = create_stuff_documents_chain(
-        llm, 
-        qa_prompt
-    )
-    # Combine the retriever and question answering components
-    rag_chain = create_retrieval_chain(
-        history_aware_retriever, 
-        question_answer_chain
-    )
-    
-    logger.info(f"Successfully created RAG chain with model: {model}")
-    return rag_chain
 
-def get_standalone_rag_chain(model: str = GenerationModelName.GEMINI_2_FLASH, k: int = 3):
+    if user_input:
+        intent = intent_detector.detect(user_input)
+        selected_prompt, requires_context = select_prompt_by_intent(intent)
+        logger.info(f"Detected intent: {intent} | Requires context: {requires_context}")
+    else:
+        selected_prompt, requires_context = qa_prompt, True
+
+    if requires_context:
+        cached_retriever = retriever
+        if USE_REDIS_CACHE:
+            cached_retriever = get_cached_retriever(cached_retriever)
+
+        history_aware_retriever = create_history_aware_retriever(
+            llm,
+            cached_retriever,
+            contextualize_q_prompt
+        )
+
+        question_answer_chain = create_stuff_documents_chain(
+            llm,
+            selected_prompt
+        )
+
+        rag_chain = create_retrieval_chain(
+            history_aware_retriever,
+            question_answer_chain
+        )
+    else:
+        rag_chain = LLMChain(
+            llm=llm,
+            prompt=selected_prompt
+        )
+
+    logger.info(f"Successfully created chain with model: {model}")
+    return rag_chain,
+
+def get_standalone_rag_chain(model: str = GenerationModelName.GEMINI_2_FLASH, k: int = 3, user_input: Optional[str] = None):
     """
-    Create a simplified RAG chain without history awareness.
-    
-    Args:
-        model: Model name to use for generation
-        k: Number of documents to retrieve
-        
-    Returns:
-        Chain: A simplified RAG chain for direct question answering
+    Create a standalone RAG chain depending on detected intent.
     """
-    logger.info(f"Creating standalone RAG chain with model: {model}")
-    
-    # Initialize the LLM
+    logger.info(f"Creating standalone RAG chain with model: {model}, user_input: {user_input}")
     llm = get_llm(model)
-    
-    # Create a simple retriever with specified k value
-    simple_retriever = vectorstore.as_retriever(search_kwargs={"k": k})
-    
-    # Apply caching if Redis is available
-    if USE_REDIS_CACHE:
-        simple_retriever = get_cached_retriever(simple_retriever)
-    
-    # Create a simpler prompt template without chat history
-    simple_qa_prompt = ChatPromptTemplate.from_messages([
-        ("system", qa_system_prompt),
-        ("system", "Context: {context}"),
-        ("human", "{input}")
-    ])
-    
-    # Create the question answering chain
-    simple_qa_chain = create_stuff_documents_chain(llm, simple_qa_prompt)
-    
-    # Create the retrieval chain
-    simple_rag_chain = create_retrieval_chain(
-        simple_retriever,
-        simple_qa_chain
-    )
-    
-    logger.info("Standalone RAG chain created successfully")
-    return simple_rag_chain
+
+    if user_input:
+        intent = intent_detector.detect(user_input)
+        selected_prompt, requires_context = select_prompt_by_intent(intent)
+        logger.info(f"Detected intent: {intent} | Requires context: {requires_context}")
+    else:
+        selected_prompt, requires_context = qa_prompt, True
+
+    if requires_context:
+        simple_retriever = vectorstore.as_retriever(search_kwargs={"k": k})
+        if USE_REDIS_CACHE:
+            simple_retriever = get_cached_retriever(simple_retriever)
+
+        simple_qa_chain = create_stuff_documents_chain(
+            llm,
+            selected_prompt
+        )
+
+        simple_rag_chain = create_retrieval_chain(
+            simple_retriever,
+            simple_qa_chain
+        )
+
+        return simple_rag_chain
+    else:
+        simple_chain = LLMChain(
+            llm=llm,
+            prompt=selected_prompt
+        )
+        return simple_chain

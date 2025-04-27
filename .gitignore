@@ -1,9 +1,11 @@
 .env
-/log
-/model
+/tmp
+/logs
+/models
 step.txt
 /__pycache__
 /archive
 /.idea
 *.pyc
 test.py
+/models/LLM/data
