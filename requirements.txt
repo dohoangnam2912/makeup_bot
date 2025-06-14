@@ -22,19 +22,8 @@ langchain-core
 langchain-huggingface
 langchain-community
 
-# Model
-torch 
-transformers 
-peft 
-deepspeed 
-datasets 
-accelerate
-bitsandbytes
-sentencepiece
-
 # Utilities
 requests
 tqdm
 
-# Frontend
-streamlit
+

@@ -9,3 +9,4 @@ step.txt
 *.pyc
 test.py
 /models/LLM/data
+/data

@@ -1,0 +1,8 @@
+/* In your globals.css or equivalent */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* You might also want to set it as a base font for your body */
+body {
+  font-family: 'Inter', sans-serif;
+  /* You can add other base body styles here if needed */
+}

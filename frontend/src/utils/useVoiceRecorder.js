@@ -1,5 +1,5 @@
 export const recordVoiceUntilSilence = async ({
-    silenceThreshold = 6,
+    silenceThreshold = 5,
     silenceDuration = 2500,
     onStop = () => {},
     onStart = () => {},

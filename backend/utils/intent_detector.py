@@ -4,12 +4,12 @@ import torch
 import logging
 
 logger = logging.getLogger("app.intent_detector")
-model_path = IntentClassificationModel.BERT_BASE_FINETUNED
+model_path = IntentClassificationModel.BERT_BASE_FINETUNED.value
 
 class IntentDetector:
     def __init__(self, model_name="google-bert/bert-base-multilingual-cased", device="cpu"):
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=6)  # placeholder
+        self.model = AutoModelForSequenceClassification.from_pretrained(model_path, num_labels=6)  # placeholder
         self.device = device
         self.model.to(device)
         

@@ -1,2 +1,10 @@
 @import "tailwindcss";
 
+
+.home-container {
+    transition: opacity 0.5s ease;
+}
+  
+.home-container.fade-out {
+    opacity: 0;
+}
