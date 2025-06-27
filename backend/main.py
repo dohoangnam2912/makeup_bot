@@ -3,7 +3,7 @@ FastAPI application for document-based RAG system with Qdrant and MongoDB.
 """
 import logging
 from fastapi import FastAPI
-from routes import chat_routes, tts_routes
+from routes import chat_routes, tts_routes, intent_routes, stt_routes
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -24,6 +24,7 @@ app = FastAPI()
 # Define the exact origins that are allowed to connect.
 origins = [
     "http://localhost:5173", # The origin of your React frontend
+    "http://127.0.0.1:5173",
 ]
 
 app.add_middleware(
@@ -36,3 +37,5 @@ app.add_middleware(
 
 app.include_router(chat_routes.router, prefix="/routes")
 app.include_router(tts_routes.router, prefix="/routes")
+app.include_router(intent_routes.router, prefix="/routes", tags=["intent"])
+app.include_router(stt_routes.router, prefix="/routes", tags=["stt"])

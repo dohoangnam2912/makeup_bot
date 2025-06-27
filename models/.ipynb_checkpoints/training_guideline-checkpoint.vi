@@ -1,3 +1,0 @@
-Peft - LoRA to train a model with less parameters
-
-Deepspeed - To offload train a model to CPU if GPU overflow

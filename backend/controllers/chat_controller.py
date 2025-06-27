@@ -17,15 +17,15 @@ logger = logging.getLogger("app.chat_controller")
 if not DIFY_API_KEY:
     logger.error("DIFY_API_KEY is not set. Please configure it in your environment.")
 
-def handle_chat(query_input: QueryInput) -> QueryResponse:
+def handle_chat(query_input: QueryInput, conversation_id: str) -> QueryResponse:
     logger.info(f"handle_chat received query: {query_input.question} for session: {query_input.session_id}")
     session_id = query_input.session_id or str(uuid.uuid4())
     query = query_input.question
     
-    # Default answer in case of any failure
+    # Default values - Initialize ALL variables that will be used in the return statement
     answer_text = "Sorry, I encountered an error while processing your request."
-    response_type = None  # Default type
-    dify_request_successful = False
+    response_type = None
+    returned_conversation_id = conversation_id  # Initialize with the input conversation_id
 
     if not DIFY_API_KEY:
         answer_text = "AI service is not configured (API key missing)."
@@ -33,7 +33,8 @@ def handle_chat(query_input: QueryInput) -> QueryResponse:
             response=answer_text,
             session_id=session_id,
             query=query,
-            type=response_type
+            type=response_type,
+            conversation_id=returned_conversation_id
         )
 
     headers = {
@@ -48,6 +49,10 @@ def handle_chat(query_input: QueryInput) -> QueryResponse:
         "user": session_id,
     }
 
+    # Only include conversation_id if it exists
+    if conversation_id:
+        payload["conversation_id"] = conversation_id
+
     try:
         logger.debug(f"Sending request to Dify: {DIFY_CHAT_ENDPOINT} with payload: {payload}")
         response = requests.post(DIFY_CHAT_ENDPOINT, headers=headers, json=payload, timeout=30)
@@ -56,8 +61,9 @@ def handle_chat(query_input: QueryInput) -> QueryResponse:
         dify_response_data = response.json()
         logger.debug(f"Dify raw response data: {dify_response_data}")
 
-        # Get the answer, which contains the JSON string with type and response
+        # Get the answer and conversation_id
         answer = dify_response_data.get("answer")
+        returned_conversation_id = dify_response_data.get("conversation_id", conversation_id)
         
         if answer is None:
             dify_error = dify_response_data.get("error", {}).get("message") or dify_response_data.get("message")
@@ -84,7 +90,6 @@ def handle_chat(query_input: QueryInput) -> QueryResponse:
                 answer_text = parsed_answer.get("response", "No response provided in the answer.")
                 response_type = parsed_answer.get("type")
                 
-                dify_request_successful = True
                 logger.info(f"Successfully parsed Dify answer: response='{answer_text[:100]}...', type='{response_type}'")
             except json.JSONDecodeError as e:
                 logger.error(f"Failed to parse Dify answer as JSON: {answer} - Error: {e}")
@@ -119,11 +124,12 @@ def handle_chat(query_input: QueryInput) -> QueryResponse:
         logger.error("Critical: answer_text became None despite checks. Fallback to generic error.")
         answer_text = "A critical error occurred, and the answer could not be determined."
 
-    logger.info(f"Returning QueryResponse: response='{answer_text[:100]}...', session_id='{session_id}', type='{response_type}'")
+    logger.info(f"Returning QueryResponse: response='{answer_text[:100]}...', session_id='{session_id}', type='{response_type}', conversation_id='{returned_conversation_id}'")
     
     return QueryResponse(
         response=answer_text,
         session_id=session_id,
         query=query,
+        conversation_id=returned_conversation_id,
         type=response_type
     )

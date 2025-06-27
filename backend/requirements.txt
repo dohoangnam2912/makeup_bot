@@ -1,0 +1,15 @@
+# Core dependencies
+fastapi
+uvicorn
+pydantic
+python-dotenv
+
+# Utilities
+requests
+tqdm
+
+#
+openai-whisper
+kokoro
+soundfile
+

@@ -10,3 +10,8 @@ step.txt
 test.py
 /models/LLM/data
 /data
+compose.yaml
+Dockerfile
+/backend/tmp
+/venv
+/backend/llm_models/

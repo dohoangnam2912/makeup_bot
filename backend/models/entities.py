@@ -40,6 +40,7 @@ class QueryResponse(BaseModel):
     response: Union[str, List[str]]
     session_id: str
     query: str
+    conversation_id:str
     type: str
 
 class Document(BaseModel):
